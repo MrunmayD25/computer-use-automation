@@ -1,0 +1,588 @@
+{
+  "application": {
+    "entry_route": "/members",
+    "markers": [
+      {
+        "target": "member_field",
+        "type": "present"
+      }
+    ],
+    "origin": "https://bank.test",
+    "profile_id": "bank/core/sandbox",
+    "surface": "browser"
+  },
+  "capability_id": "member_transfer",
+  "entry": "enter_member",
+  "inputs": [
+    {
+      "choices": [],
+      "max_length": 10,
+      "min_length": 5,
+      "name": "member_id",
+      "required": true,
+      "type": "digits"
+    },
+    {
+      "choices": [],
+      "max_length": 12,
+      "min_length": 1,
+      "name": "amount",
+      "required": true,
+      "type": "decimal"
+    }
+  ],
+  "limits": {
+    "max_help_requests": 3,
+    "max_settle_observations": 2,
+    "max_steps": 30,
+    "max_target_attempts": 2,
+    "max_wall_clock_s": 120,
+    "settle_interval_ms": 100
+  },
+  "nodes": [
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "enter_member",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members",
+      "target": "member_field",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "search",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": "search_member",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "search",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members",
+      "target": "search",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "read_balance",
+          "when": [
+            {
+              "match": "equals",
+              "once": false,
+              "purpose": "state",
+              "record": null,
+              "target": "member_shown",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "member_id",
+                "value": ""
+              }
+            }
+          ]
+        },
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "not_found",
+          "when": [
+            {
+              "target": "no_member",
+              "type": "present"
+            }
+          ]
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": {
+        "kind": "output",
+        "name": "balance",
+        "value": ""
+      },
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "read_balance",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members/:id",
+      "target": "balance",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "open_transfer",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": "open_transfer",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "open_transfer",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members/:id",
+      "target": "transfer_link",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "enter_amount",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "route": "/members/:id/transfer",
+          "type": "at_route"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "enter_amount",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members/:id/transfer",
+      "target": "amount",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "enter_pin",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "amount",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "enter_pin",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/members/:id/transfer",
+      "target": "pin",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "submit",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "secret",
+        "name": "teller_pin",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "each_run",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": "submit_transfer",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": true,
+      "node_id": "submit",
+      "record": {
+        "match": "equals",
+        "prefix": "",
+        "relation": "container",
+        "source": "transfer_member",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [],
+      "result_record": null,
+      "route": "/members/:id/transfer",
+      "target": "submit",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "done",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "target": "submitted",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "checks": [
+        {
+          "target": "submitted",
+          "type": "present"
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "transfer_member",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "type": "bound",
+          "value": {
+            "kind": "output",
+            "name": "balance",
+            "value": ""
+          }
+        }
+      ],
+      "node_id": "done",
+      "outcome": "",
+      "result": "success",
+      "type": "result"
+    },
+    {
+      "checks": [
+        {
+          "target": "no_member",
+          "type": "present"
+        }
+      ],
+      "node_id": "not_found",
+      "outcome": "member_not_found",
+      "result": "outcome",
+      "type": "result"
+    }
+  ],
+  "outcomes": [
+    "member_not_found"
+  ],
+  "outputs": [
+    {
+      "choices": [],
+      "max_length": 20,
+      "min_length": 1,
+      "name": "balance",
+      "required": false,
+      "type": "decimal"
+    }
+  ],
+  "provenance": {
+    "kind": "synthetic",
+    "recorder": "hand_written_fixture",
+    "review": "reviewed",
+    "run": ""
+  },
+  "restrictions": [],
+  "schema_version": 10,
+  "secrets": [
+    "teller_pin"
+  ],
+  "targets": [
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Member number"
+      },
+      "role": "textbox",
+      "route": "/members",
+      "scope": null,
+      "tag": "",
+      "target_id": "member_field",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Search"
+      },
+      "role": "button",
+      "route": "/members",
+      "scope": null,
+      "tag": "",
+      "target_id": "search",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "No member found"
+      },
+      "role": "status",
+      "route": "/members",
+      "scope": null,
+      "tag": "",
+      "target_id": "no_member",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "id",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/members/:id",
+      "scope": null,
+      "tag": "dd",
+      "target_id": "member_shown",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "member-number"
+      }
+    },
+    {
+      "attribute": "id",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/members/:id",
+      "scope": null,
+      "tag": "dd",
+      "target_id": "balance",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "balance"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Transfer"
+      },
+      "role": "link",
+      "route": "/members/:id",
+      "scope": null,
+      "tag": "",
+      "target_id": "transfer_link",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "id",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/members/:id/transfer",
+      "scope": null,
+      "tag": "dd",
+      "target_id": "transfer_member",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "member-number"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Amount"
+      },
+      "role": "textbox",
+      "route": "/members/:id/transfer",
+      "scope": null,
+      "tag": "",
+      "target_id": "amount",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Teller PIN"
+      },
+      "role": "textbox",
+      "route": "/members/:id/transfer",
+      "scope": null,
+      "tag": "",
+      "target_id": "pin",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Submit transfer"
+      },
+      "role": "button",
+      "route": "/members/:id/transfer",
+      "scope": null,
+      "tag": "",
+      "target_id": "submit",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Transfer submitted"
+      },
+      "role": "status",
+      "route": "/members/:id/transfer",
+      "scope": null,
+      "tag": "",
+      "target_id": "submitted",
+      "type": "structural",
+      "value": null
+    }
+  ],
+  "templates": [],
+  "variables": [],
+  "version": 1
+}

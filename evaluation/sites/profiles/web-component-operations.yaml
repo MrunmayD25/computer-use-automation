@@ -1,0 +1,297 @@
+# A single-page console built from custom web components. The profile names
+# the pages an operator visits, restricted areas, outcomes that change data,
+# submissions that change nothing, and a budget suited to the screens.
+version: 8
+profile_id: evaluation/web-component-operations/sandbox
+environment: sandbox
+
+base_url: http://127.0.0.1:4360
+allow_routes:                 # one page; its screens change after the #
+  - /
+deny_routes:
+  - /admin/**                 # administration is never part of servicing work
+allow_new_windows: true       # permitted, and every new window still goes to a person
+origins: []                   # no other address is reachable
+allow_downloads: false        # statements and exports stay on the page
+# Execute is a native submit button whose handler sends the command.
+# Review is a separate preparation button.
+submissions: risky
+
+# Operator-reviewed operation aliases. They identify input but grant no action.
+operations:
+- name: shell
+  operation: shell
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Operations portal
+  kinds:
+  - click
+  - type
+  - select
+  - press_key
+  target: '*'
+  role: '*'
+  key: ''
+  submission: none
+  limit: by_effect
+- name: members
+  operation: members
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Members
+  kinds:
+  - click
+  - type
+  - select
+  - press_key
+  target: '*'
+  role: '*'
+  key: ''
+  submission: none
+  limit: by_effect
+- name: accounts
+  operation: accounts
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Accounts
+  kinds:
+  - click
+  - type
+  - select
+  - press_key
+  target: '*'
+  role: '*'
+  key: ''
+  submission: none
+  limit: by_effect
+- name: open_form
+  operation: open_form
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Operations
+  kinds:
+  - click
+  target: Open account
+  role: button
+  key: ''
+  submission: none
+  limit: by_effect
+- name: prepare_account
+  operation: prepare_account
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Open account
+  kinds:
+  - click
+  - type
+  - select
+  target: '*'
+  role: '*'
+  key: ''
+  submission: none
+  limit: by_effect
+- name: search_picker
+  operation: search_picker
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Open account
+  kinds:
+  - press_key
+  target: '*'
+  role: '*'
+  key: Enter
+  submission: none
+  limit: by_effect
+- name: execute_account
+  operation: open_account
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Open account
+  kinds:
+  - click
+  target: Execute
+  role: button
+  key: ''
+  submission: native
+  limit: risky
+- name: execute_key
+  operation: open_account
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Open account
+  kinds:
+  - press_key
+  target: '*'
+  role: '*'
+  key: Enter
+  submission: native
+  limit: risky
+- name: choose_picker
+  operation: choose_picker
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - popup:listbox
+  kinds:
+  - click
+  target: '*'
+  role: option
+  key: ''
+  submission: none
+  limit: by_effect
+- name: choose_operator
+  operation: choose_operator
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - popup:menu
+  kinds:
+  - click
+  target: '*'
+  role: menuitem
+  key: ''
+  submission: none
+  limit: by_effect
+- name: open_receipt
+  operation: open_receipt
+  route: /
+  frame: []
+  mode: structured
+  context:
+  - heading:Committed
+  kinds:
+  - click
+  target: Open receipt
+  role: button
+  key: ''
+  submission: none
+  limit: by_effect
+pickers:
+- operation: open_account
+  slot: input|Member
+  source: host
+  property: ready
+- operation: open_account
+  slot: input|Product
+  source: host
+  property: ready
+
+actions:
+  observe:        {any: safe}
+  read:           {any: safe}
+  wait_for:       {any: safe}
+  assert:         {any: safe}
+  wait:           {any: safe}
+  navigate:       {any: safe}
+  scroll:         {any: safe}
+  move:           {any: safe}
+  click:
+    any: safe
+    effects:
+      create_record:    risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      request_approval: risky
+      close_record:     risky
+      remove_record:    deny
+  double_click:
+    any: safe
+    effects:
+      create_record:    risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      request_approval: risky
+      close_record:     risky
+      remove_record:    deny
+  drag:
+    any: safe
+    effects:
+      create_record:    risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      request_approval: risky
+      close_record:     risky
+      remove_record:    deny
+  press_key:
+    any: safe
+    effects:
+      create_record:    risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      request_approval: risky
+      close_record:     risky
+      remove_record:    deny
+  type:           {any: safe}
+  select:         {any: safe}
+  dismiss_dialog: {any: safe}
+  accept_dialog:  {any: risky}  # a confirmation is where a change becomes final
+
+perception:
+  allowed_modes: [structured, visual]
+  max_alternate_observations_per_step: 5
+
+records:                      # no page layout is assumed, so no route is named
+  actions: []
+  routes: []
+
+budgets:
+  max_steps: 60               # opening an account takes about 32 steps
+  max_wall_clock_s: 900       # automation time; waiting on a person is not counted
+  max_retries_per_step: 4
+  max_navigations: 30
+
+secrets:
+  approver_passcode: {env: APPROVER_PASSCODE}
+
+escalation:
+  handoff_timeout_s: 900
+  on_timeout: abort
+
+confirmation:                 # a second test record; confirms website text before a save
+  inputs:
+    member_id: NM000003       # a different name from the discovered member
+    operator_id: OP0002
+  outcomes:                   # inputs that make the application say no, one per answer
+    record_not_found:         # a member the sandbox does not hold
+      member_id: NM999998
+    # Ineligible and permission-denied cases are not listed: their refusal
+    # comes after a step the main capability never takes, so a discovery of
+    # them cannot become a branch. A replay that meets one stops for a person.

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vendor Core 9.2 - Approval queue</title>
+  <link rel="stylesheet" href="/static/core.css">
+</head>
+<body>
+<h1>Approval queue</h1>
+
+<section aria-label="Member details">
+  <h2>Member details</h2>
+  <dl>
+    <dt>Member number</dt><dd id="member-number">10001</dd>
+    <dt>Request</dt><dd id="member-request">Raise the daily card limit</dd>
+  </dl>
+  <p id="approve-slot"><button type="button">Approve</button></p>
+  <canvas id="queue-pad" width="300" height="90"></canvas>
+</section>
+
+<section aria-label="Queue tools">
+  <h2>Queue tools</h2>
+  <p>
+    <button type="button" id="next-member">Load the next member</button>
+    <button type="button" id="move-approve">Move the approve button</button>
+    <button type="button" id="change-note">Change the queue note</button>
+    <button type="button" id="repeat-number">Show the member number twice</button>
+    <button type="button" id="drop-number">Hide the member number</button>
+    <button type="button" id="delayed-swap">Cover the approve button, then swap</button>
+    <button type="button" id="swap-on-press">Swap as the next press arrives</button>
+  </p>
+  <p id="queue-note">Three requests are waiting.</p>
+  <p>Approved member: <output id="approved-member">none</output></p>
+</section>
+
+<script src="/static/queue.js"></script>
+</body>
+</html>

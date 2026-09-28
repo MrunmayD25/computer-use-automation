@@ -1,0 +1,79 @@
+[
+  {
+    "application": "desktop-mdi-console",
+    "run_id": "full-v1-5d321dc-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "document-ledger-workstation",
+    "run_id": "full-v1-5d321dc-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "federated-servicing-suite",
+    "run_id": "full-v1-e07a1ca-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "legacy-banking-console",
+    "run_id": "full-v1-6bb6219-20260921-handoff",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "legacy-postback-portal",
+    "run_id": "full-v1-d84cc14-20260921-handoff",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "terminal-host-banking",
+    "run_id": "full-v1-5d321dc-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "virtualized-service-workspace",
+    "run_id": "full-v1-5d321dc-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "web-component-operations",
+    "run_id": "full-v1-5d321dc-20260920",
+    "run_files": 19,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "white-label-classic",
+    "run_id": "full-v1-09329b1-20260920",
+    "run_files": 20,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "white-label-modern",
+    "run_id": "full-v1-09329b1-20260920",
+    "run_files": 20,
+    "records_checked": 166,
+    "mismatches": []
+  },
+  {
+    "application": "white-label-responsive",
+    "run_id": "full-v1-09329b1-20260920",
+    "run_files": 20,
+    "records_checked": 166,
+    "mismatches": []
+  }
+]

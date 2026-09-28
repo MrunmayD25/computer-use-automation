@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vendor Core 9.2 - Member search</title>
+  <link rel="stylesheet" href="/static/core.css">
+</head>
+<body>
+<h1>Member search</h1>
+
+<form name="member-search" action="/members" method="get">
+  <fieldset>
+    <legend>Find a member</legend>
+    <label for="member-id">Member number</label>
+    <input id="member-id" name="member_id" type="text" autocomplete="off">
+    <label for="branch">Branch</label>
+    <select id="branch" name="branch">
+      <option>All branches</option>
+      <option>Riverside</option>
+      <option>Eastgate</option>
+    </select>
+    <button type="submit">Search</button>
+  </fieldset>
+</form>
+
+<table aria-label="Member results">
+  <thead>
+    <tr><th scope="col">Member</th><th scope="col">Name</th><th scope="col">Branch</th>
+      <th scope="col">Action</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">12345</th><td>Dale Okonkwo</td><td>Riverside</td>
+      <td><button type="button" onclick="location.href='/members/12345'">Open</button></td>
+    </tr>
+    <tr>
+      <th scope="row">67890</th><td>Priya Raman</td><td>Eastgate</td>
+      <td><button type="button" onclick="location.href='/members/67890'">Open</button></td>
+    </tr>
+    <tr>
+      <th scope="row">24680</th><td>Sam Whitfield</td><td>Riverside</td>
+      <td><button type="button" onclick="location.href='/members/24680'">Open</button></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

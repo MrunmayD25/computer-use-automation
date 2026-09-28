@@ -1,0 +1,34 @@
+import argparse
+import dataclasses
+import json
+from pathlib import Path
+
+from computeruse.capability import load_capability
+from computeruse.profile import load_profile
+from evaluation import integrated as evaluation
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--site', required=True)
+parser.add_argument('--capability', type=Path, required=True)
+parser.add_argument('--out', type=Path, required=True)
+args = parser.parse_args()
+app = {'responsive':'white-label-responsive','components':'web-component-operations','canvas':'canvas-teller'}[args.site]
+profile = load_profile(evaluation.profile_path(app))
+capability = load_capability(args.capability)
+task = next(t for t in evaluation.TASKS if t.name == capability.capability_id)
+args.out.mkdir(parents=True,exist_ok=False)
+results=[]
+for case in task.replays:
+    if task.writes:
+        continue
+    result=evaluation.replay_case(app, f'http://127.0.0.1:{evaluation.APPS[app]}/',args.out,profile,capability,task,case)
+    results.append(result)
+    (args.out/'summary.json').write_text(json.dumps(results,indent=2)+'\n')
+    print(json.dumps(result),flush=True)
+for injection in evaluation.FAULTS.get((app,task.name),()):
+    if task.writes:
+        continue
+    result=evaluation.replay_case(app,f'http://127.0.0.1:{evaluation.APPS[app]}/',args.out,profile,capability,task,task.faulted or task.replays[0],injection)
+    results.append(result)
+    (args.out/'summary.json').write_text(json.dumps(results,indent=2)+'\n')
+    print(json.dumps(result),flush=True)

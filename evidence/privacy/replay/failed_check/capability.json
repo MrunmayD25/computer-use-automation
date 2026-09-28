@@ -1,0 +1,328 @@
+{
+  "application": {
+    "entry_route": "/work",
+    "markers": [
+      {
+        "target": "memo",
+        "type": "present"
+      }
+    ],
+    "origin": "http://127.0.0.1:62125",
+    "profile_id": "local-eval/vendor-core-9.2/sandbox",
+    "surface": "browser"
+  },
+  "capability_id": "local_post",
+  "entry": "fill",
+  "inputs": [
+    {
+      "choices": [],
+      "max_length": 80,
+      "min_length": 1,
+      "name": "memo",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "limits": {
+    "max_help_requests": 1,
+    "max_settle_observations": 2,
+    "max_steps": 30,
+    "max_target_attempts": 2,
+    "max_wall_clock_s": 8,
+    "settle_interval_ms": 100
+  },
+  "nodes": [
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "fill",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/work",
+      "target": "memo",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "pin",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "memo",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "pin",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/work",
+      "target": "pin",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "post",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "secret",
+        "name": "session_pin",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": "post_entry",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": true,
+      "node_id": "post",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/work",
+      "target": "post",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "read",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "receipt",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Posted"
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": {
+        "kind": "output",
+        "name": "account_number",
+        "value": ""
+      },
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "read",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/work",
+      "target": "account",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "done",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "checks": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "receipt",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Posted"
+          }
+        },
+        {
+          "type": "bound",
+          "value": {
+            "kind": "output",
+            "name": "account_number",
+            "value": ""
+          }
+        }
+      ],
+      "node_id": "done",
+      "outcome": "",
+      "result": "success",
+      "type": "result"
+    }
+  ],
+  "outcomes": [],
+  "outputs": [
+    {
+      "choices": [],
+      "max_length": 80,
+      "min_length": 1,
+      "name": "account_number",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "provenance": {
+    "kind": "synthetic",
+    "recorder": "cli_fixture",
+    "review": "reviewed",
+    "run": ""
+  },
+  "restrictions": [],
+  "schema_version": 10,
+  "secrets": [
+    "session_pin"
+  ],
+  "targets": [
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Memo"
+      },
+      "role": "textbox",
+      "route": "/work",
+      "scope": null,
+      "tag": "",
+      "target_id": "memo",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "PIN"
+      },
+      "role": "textbox",
+      "route": "/work",
+      "scope": null,
+      "tag": "",
+      "target_id": "pin",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Account number"
+      },
+      "role": "textbox",
+      "route": "/work",
+      "scope": null,
+      "tag": "",
+      "target_id": "account",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Post"
+      },
+      "role": "button",
+      "route": "/work",
+      "scope": null,
+      "tag": "",
+      "target_id": "post",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Posted"
+      },
+      "role": "heading",
+      "route": "/work",
+      "scope": null,
+      "tag": "",
+      "target_id": "receipt",
+      "type": "structural",
+      "value": null
+    }
+  ],
+  "templates": [],
+  "variables": [],
+  "version": 1
+}

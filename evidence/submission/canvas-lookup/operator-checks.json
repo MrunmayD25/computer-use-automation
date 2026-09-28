@@ -1,0 +1,85 @@
+{
+  "checked_at_utc": "2026-09-28T03:58:54.369140+00:00",
+  "application": "canvas-teller",
+  "task": "member_status",
+  "operator": "Human intervention through active monitoring and input",
+  "method": "Fresh live-model discovery through scripts/discover.sh; manual approval after full artifact inspection; two independent model-free runs through scripts/replay.sh. No scripted model decisions or simulated operator responses.",
+  "discovery": {
+    "member_id": "NM000054",
+    "operator_id": "OP0002",
+    "observed_terminal": "run completed after 12 steps: every check of the result passed on the live page; membership_status: active; verified by executor, 3 of 3 checks",
+    "status": "completed",
+    "steps": 12,
+    "observed_output": {
+      "membership_status": "active"
+    },
+    "database_expected": {
+      "membership_status": "active"
+    },
+    "matches_database": true,
+    "outcome_check": {
+      "member_id": "NM999998",
+      "status": "completed",
+      "steps": 15,
+      "learned_outcome": "record_not_found"
+    },
+    "review": "Inspected operator/member input references, painted targets, status choices, record/operator result checks, and learned not-found branch. No private constants in artifact. Approved through terminal.",
+    "journal_ending": {
+      "detail": "<redacted>",
+      "ending": "completed",
+      "event": "RunEnded",
+      "steps": 12
+    }
+  },
+  "replays": [
+    {
+      "member_id": "NM000038",
+      "operator_id": "OP0002",
+      "journal": "replay-1.jsonl",
+      "log": "replay-1.log",
+      "observed_terminal": "replay succeeded: completed, 6 steps; membership_status: inactive",
+      "observed_output": {
+        "membership_status": "inactive"
+      },
+      "database_expected": {
+        "membership_status": "inactive"
+      },
+      "matches_database": true,
+      "journal_ending": {
+        "event": "ReplayEnded",
+        "node": "node_6",
+        "reason": "completed",
+        "status": "succeeded",
+        "steps": 6
+      }
+    },
+    {
+      "member_id": "NM999999",
+      "operator_id": "OP0002",
+      "journal": "replay-2.jsonl",
+      "log": "replay-2.log",
+      "observed_terminal": "replay outcome: business_outcome, 5 steps; Outcome: record not found",
+      "observed_outcome": "record_not_found",
+      "database_matching_members": 0,
+      "matches_database": true,
+      "journal_ending": {
+        "event": "ReplayEnded",
+        "node": "node_5",
+        "reason": "business_outcome",
+        "status": "outcome",
+        "steps": 5
+      }
+    }
+  ],
+  "account_changes": {
+    "method": "Full every_account() rows compared before discovery and after both replays, read directly from isolated SQLite fixture",
+    "before_count": 495,
+    "after_count": 495,
+    "before_sha256": "47594f736f7a454b922c3f40f980f09fc0cc1593d2fa7a695e7cc1f295eabf10",
+    "after_sha256": "47594f736f7a454b922c3f40f980f09fc0cc1593d2fa7a695e7cc1f295eabf10",
+    "unchanged": true
+  },
+  "policy_edits": false,
+  "private_values_note": "Member and operator identifiers are synthetic fixture data. Saved native logs redact these values; this operator check records synthetic inputs and independently checked outputs explicitly.",
+  "browser_cleanup": "Both replay result windows dismissed and all three CLI processes exited 0. Site server intentionally left running for subsequent write evaluation."
+}

@@ -1,0 +1,10 @@
+{"command": "stop", "event": "Commanded", "intervention": "", "step": 1, "verdict": "accepted", "via": "terminal"}
+{"ask": "pause", "event": "Paused", "intervention": "request_1", "step": 1, "trigger": null}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 1, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "performed", "intervention": "request_1", "passed": true, "step": 1}
+{"ask": "approval", "event": "Paused", "intervention": "request_2", "step": 4, "trigger": "risky_action"}
+{"command": "resume", "event": "Commanded", "intervention": "request_2", "step": 4, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_2", "passed": true, "step": 4}
+{"ask": "approval", "event": "Paused", "intervention": "request_3", "step": 4, "trigger": "risky_action"}
+{"command": "approve", "event": "Commanded", "intervention": "request_3", "step": 4, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_3", "passed": true, "step": 4}

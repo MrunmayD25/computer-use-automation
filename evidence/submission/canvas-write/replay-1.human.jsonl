@@ -1,0 +1,4 @@
+{"command": "start", "event": "Commanded", "intervention": "", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 11, "trigger": "risky_action"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 11, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_1", "passed": true, "step": 11}

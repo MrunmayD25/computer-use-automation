@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-09-28T04:04:11.530944+00:00",
+  "source": "Independent read-only SQLite comparison using evaluation.integrated.Truth",
+  "observed_terminal_output": {
+    "account_number": "AC0000160"
+  },
+  "requested_inputs": {
+    "member_id": "NM000054",
+    "operator_id": "OP0002",
+    "product": "USD savings",
+    "nickname": "Holiday fund",
+    "statement_delivery": "paper"
+  },
+  "matches_requested_change_and_output": true,
+  "added_accounts": [
+    [
+      "AC0000160",
+      "NM000054",
+      "financial-demo-v1:northstar",
+      "northstar",
+      "USD savings",
+      "Holiday fund",
+      "paper"
+    ]
+  ],
+  "removed_or_changed_accounts": 0,
+  "synthetic_data": true
+}

@@ -1,0 +1,268 @@
+{
+  "status": "complete",
+  "meaning": "Evidence covers all six site/task cases. Complete describes evidence collection, not success of every task. Replay journal status and independently checked output correctness are separate.",
+  "collected_at_utc": "2026-09-28T09:03:42.831008+00:00",
+  "operator": "Human intervention through active monitoring and input",
+  "operator_context": "For the responsive and canvas cases and component lookup, the project owner clarified that the human participant actively monitored the runs and provided inputs; an AI assistant entered the terminal commands. The component write evidence is the project owner's separately executed run from the testing copy.",
+  "model": "gpt-6-luna",
+  "cases": [
+    {
+      "id": "responsive-lookup",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 7
+      },
+      "last_checks": {
+        "checks": 3,
+        "event": "Verified",
+        "passed": 3,
+        "step": 7,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "responsive-lookup/replay-1.jsonl",
+          "log": "responsive-lookup/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_9",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 9
+        },
+        {
+          "journal": "responsive-lookup/replay-2.jsonl",
+          "log": "responsive-lookup/replay-2.log",
+          "event": "ReplayEnded",
+          "node": "node_6",
+          "reason": "business_outcome",
+          "status": "outcome",
+          "steps": 6
+        }
+      ],
+      "operator_checks": "responsive-lookup/operator-checks.json",
+      "database_comparisons": [],
+      "independent_end_to_end_result": "correct",
+      "independent_lookup_cases": {
+        "passed": 4,
+        "total": 7,
+        "summary": "responsive-lookup/independent-replays/summary.json"
+      }
+    },
+    {
+      "id": "responsive-write",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 27
+      },
+      "last_checks": {
+        "checks": 6,
+        "event": "Verified",
+        "passed": 6,
+        "step": 27,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "responsive-write/replay-1.jsonl",
+          "log": "responsive-write/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_18",
+          "reason": "delivery_uncertain",
+          "status": "needs_help",
+          "steps": 18
+        },
+        {
+          "journal": "responsive-write/replay-2.jsonl",
+          "log": "responsive-write/replay-2.log",
+          "event": "ReplayEnded",
+          "node": "node_32",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 32
+        }
+      ],
+      "operator_checks": "responsive-write/operator-checks.json",
+      "database_comparisons": [
+        "responsive-write/database-after-discovery.json",
+        "responsive-write/database-after-replay-1.json",
+        "responsive-write/database-after-replay-2.json"
+      ],
+      "independent_end_to_end_result": "correct"
+    },
+    {
+      "id": "components-lookup",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 8
+      },
+      "last_checks": {
+        "checks": 4,
+        "event": "Verified",
+        "passed": 4,
+        "step": 8,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "components-lookup/replay-1.jsonl",
+          "log": "components-lookup/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_10",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 10
+        },
+        {
+          "journal": "components-lookup/replay-2.jsonl",
+          "log": "components-lookup/replay-2.log",
+          "event": "ReplayEnded",
+          "node": "node_6",
+          "reason": "business_outcome",
+          "status": "outcome",
+          "steps": 6
+        }
+      ],
+      "operator_checks": "components-lookup/operator-checks.json",
+      "database_comparisons": [],
+      "independent_end_to_end_result": "correct",
+      "independent_lookup_cases": {
+        "passed": 5,
+        "total": 5,
+        "summary": "components-lookup/independent-replays/summary.json"
+      }
+    },
+    {
+      "id": "components-write",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 19
+      },
+      "last_checks": {
+        "checks": 7,
+        "event": "Verified",
+        "passed": 7,
+        "step": 19,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "components-write/replay-1.jsonl",
+          "log": "components-write/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_27",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 27
+        }
+      ],
+      "operator_checks": "components-write/operator-checks.json",
+      "independent_end_to_end_result": "not_verified"
+    },
+    {
+      "id": "canvas-lookup",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 12
+      },
+      "last_checks": {
+        "checks": 3,
+        "event": "Verified",
+        "passed": 3,
+        "step": 12,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "canvas-lookup/replay-1.jsonl",
+          "log": "canvas-lookup/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_6",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 6
+        },
+        {
+          "journal": "canvas-lookup/replay-2.jsonl",
+          "log": "canvas-lookup/replay-2.log",
+          "event": "ReplayEnded",
+          "node": "node_5",
+          "reason": "business_outcome",
+          "status": "outcome",
+          "steps": 5
+        }
+      ],
+      "operator_checks": "canvas-lookup/operator-checks.json",
+      "database_comparisons": [],
+      "independent_end_to_end_result": "correct",
+      "independent_lookup_cases": {
+        "passed": 4,
+        "total": 5,
+        "summary": "canvas-lookup/independent-replays/summary.json"
+      }
+    },
+    {
+      "id": "canvas-write",
+      "discovery": {
+        "detail": "<redacted>",
+        "ending": "completed",
+        "event": "RunEnded",
+        "steps": 34
+      },
+      "last_checks": {
+        "checks": 6,
+        "event": "Verified",
+        "passed": 6,
+        "step": 34,
+        "uncovered": 0
+      },
+      "capability_exported": true,
+      "approved": true,
+      "replays": [
+        {
+          "journal": "canvas-write/replay-1.jsonl",
+          "log": "canvas-write/replay-1.log",
+          "event": "ReplayEnded",
+          "node": "node_13",
+          "reason": "completed",
+          "status": "succeeded",
+          "steps": 13
+        }
+      ],
+      "operator_checks": "canvas-write/operator-checks.json",
+      "database_comparisons": [],
+      "independent_end_to_end_result": "incorrect_output",
+      "independent_replay_finding": {
+        "reported_status": "succeeded",
+        "observed_output": "Ac0000161",
+        "database_account_number": "AC0000161",
+        "correct_effects": true,
+        "correct_output": false,
+        "full_end_to_end_correctness": false
+      }
+    }
+  ],
+  "fresh_lost_reply": "responsive-write/lost-reply/summary.json",
+  "source_manifest": "manifest.json",
+  "handoff": "../privacy/handoff/summary.json",
+  "retained_discovery_attempts_per_case": 1
+}

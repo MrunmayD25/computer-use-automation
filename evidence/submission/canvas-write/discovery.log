@@ -1,0 +1,91 @@
+{"command": "discover", "event": "CommandStarted"}
+{"alternate_observations": 5, "event": "PolicyAccepted", "max_steps": 60, "max_wall_clock_s": 900, "observation_modes": ["structured", "visual"], "risky_actions": [], "safe_actions": ["observe", "read", "wait_for", "assert", "wait", "scroll", "move", "click", "press_key", "type"]}
+{"event": "Fields", "fields": {"approver_passcode": "<approver_passcode>"}, "source": "secret"}
+{"event": "Fields", "fields": {"member_id": "<member_id>", "nickname": "<nickname>", "operator_id": "<operator_id>", "product": "<product>", "statement_delivery": "<statement_delivery>"}, "source": "input"}
+{"event": "RunStarted", "profile_id": "profile_1"}
+{"command": "start", "event": "Commanded", "intervention": "", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "Corrected", "step": 0, "tool": ""}
+{"confirmed": false, "event": "Interpreted", "outputs": 1, "records": 1}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "requested", "status": "complete", "step": 1}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 2}
+{"event": "Decided", "kind": "click", "step": 3}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 3, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 3}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 4}
+{"event": "Decided", "kind": "type", "step": 5}
+{"event": "Acted", "flagged": false, "kind": "type", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 5, "target_kind": "ScreenTarget", "value_source": "literal"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 5}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 6}
+{"event": "Decided", "kind": "click", "step": 7}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 7, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 7}
+{"alternate": true, "event": "Observed", "mode": "structured", "provenance": "requested", "status": "complete", "step": 8}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 9}
+{"event": "Decided", "kind": "type", "step": 10}
+{"event": "Acted", "flagged": false, "kind": "type", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 10, "target_kind": "ScreenTarget", "value_source": "literal"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 10}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 11}
+{"event": "Decided", "kind": "click", "step": 12}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 12, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 12}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 13}
+{"event": "Decided", "kind": "click", "step": 14}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 14, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 14}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 15}
+{"event": "Decided", "kind": "click", "step": 16}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 16, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 16}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 17}
+{"event": "Decided", "kind": "type", "step": 18}
+{"event": "Acted", "flagged": false, "kind": "type", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 18, "target_kind": "ScreenTarget", "value_source": "literal"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 18}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 19}
+{"event": "Decided", "kind": "click", "step": 20}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 20, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 20}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 21}
+{"event": "Decided", "kind": "click", "step": 22}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 22, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 22}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 23}
+{"action_step": 24, "event": "Flagged", "kind": "click", "route": "route_1", "source": "operator", "step": 24}
+{"action_step": 24, "event": "Flagged", "kind": "click", "route": "route_1", "source": "proposal", "step": 24}
+{"event": "Decided", "kind": "click", "step": 24}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 24, "trigger": "risky_action"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 24, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_1", "passed": true, "step": 24}
+{"event": "Escalated", "intervention": "request_1", "outcome": "approved", "step": 24, "trigger": "risky_action"}
+{"event": "Acted", "flagged": true, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 24, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 24}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 25}
+{"event": "Decided", "kind": "click", "step": 26}
+{"event": "Refused", "kind": "click", "reason": "repeated_change", "step": 26}
+{"event": "Decided", "kind": null, "step": 27}
+{"checks": 6, "event": "Verified", "passed": 5, "step": 27, "uncovered": 0}
+{"event": "Decided", "kind": "read", "step": 28}
+{"event": "Acted", "flagged": false, "kind": "read", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 28, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 28}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 29}
+{"event": "Decided", "kind": "read", "step": 30}
+{"event": "Acted", "flagged": false, "kind": "read", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 30, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 30}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 31}
+{"event": "Decided", "kind": "read", "step": 32}
+{"event": "Acted", "flagged": false, "kind": "read", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 32, "target_kind": "ScreenTarget", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 32}
+{"alternate": true, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 33}
+{"event": "Decided", "kind": null, "step": 34}
+{"checks": 6, "event": "Verified", "passed": 6, "step": 34, "uncovered": 0}
+{"detail": "<redacted>", "ending": "completed", "event": "RunEnded", "steps": 34}
+{"event": "Fields", "fields": {"account_number": "<account_number>"}, "source": "output"}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 0, "trigger": "run_checks"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 1, "interrupted": "none", "intervention": "request_1", "passed": true, "step": 0}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 0, "trigger": "unconfirmed_text"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 1, "interrupted": "none", "intervention": "request_1", "passed": true, "step": 0}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 0, "trigger": "capability_review"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 1, "interrupted": "none", "intervention": "request_1", "passed": true, "step": 0}
+{"code": 0, "event": "CommandEnded"}

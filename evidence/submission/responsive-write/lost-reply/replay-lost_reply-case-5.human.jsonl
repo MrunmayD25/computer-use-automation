@@ -1,0 +1,6 @@
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 19, "trigger": "risky_action"}
+{"command": "approve", "event": "Commanded", "intervention": "request_1", "step": 19, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_1", "passed": true, "step": 19}
+{"ask": "approval", "event": "Paused", "intervention": "request_2", "step": 19, "trigger": "delivery_uncertain"}
+{"command": "resume", "event": "Commanded", "intervention": "request_2", "step": 19, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "none", "intervention": "request_2", "passed": true, "step": 19}

@@ -1,0 +1,23 @@
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_1", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_3", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_4", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_4", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_4", "to": "node_5"}
+{"event": "NodeVisited", "kind": "action", "node": "node_5", "step": 5}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_5", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_5", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_5", "to": "node_6"}
+{"event": "NodeVisited", "kind": "result", "node": "node_6", "step": 6}
+{"event": "ReplayEnded", "node": "node_6", "reason": "completed", "status": "succeeded", "steps": 6}

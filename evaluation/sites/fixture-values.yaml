@@ -1,0 +1,32 @@
+# Values from evaluation sites, goals, and fixture checks. Under rule 20 in
+# RULES.md, none may appear in src/computeruse source text.
+# tests/test_rules.py searches product source for each value and verifies that
+# evaluation code still uses it.
+# Add a value here when a goal, a profile, or a fixture check starts using it.
+values:
+  # members, operators, and institutions
+  - NM000054
+  - NM000002
+  - NM000003
+  - NM000038
+  - NM000042
+  - NM999998
+  - NM999999
+  - OP0002
+  - OP0003
+  - Northstar
+  # the write task's request
+  - USD savings
+  - Holiday fund
+  - Emergency fund
+  - Rainy day fund
+  - paper statements
+  # task and output names
+  - membership_status
+  - account_number
+  - member_status
+  - open_account
+  # sites
+  - canvas-teller
+  - white-label-responsive
+  - web-component-operations

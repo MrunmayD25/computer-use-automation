@@ -1,0 +1,146 @@
+[
+  {
+    "case": "queue-person-performs-record-step",
+    "ending": "completed",
+    "steps": 3,
+    "verification": "executor",
+    "matches_fixture": true,
+    "states_seen": [
+      "ready",
+      "running",
+      "paused"
+    ],
+    "segments": [
+      {
+        "intervention": "iv-1",
+        "ask": "person",
+        "trigger": "record_evidence_required",
+        "taken": false,
+        "interrupted": "pending",
+        "steps": [
+          {
+            "kind": "click",
+            "control": "button",
+            "owned": false,
+            "secret": false,
+            "requirement": "person_each_run"
+          }
+        ],
+        "gaps": {}
+      }
+    ]
+  },
+  {
+    "case": "payment-stop-resume-approve-once",
+    "ending": "completed",
+    "steps": 2,
+    "verification": "executor",
+    "matches_fixture": true,
+    "states_seen": [
+      "ready",
+      "running",
+      "stopping",
+      "paused",
+      "checking",
+      "running",
+      "awaiting_approval"
+    ],
+    "segments": [
+      {
+        "intervention": "iv-1",
+        "ask": "pause",
+        "trigger": null,
+        "taken": false,
+        "interrupted": "pending",
+        "steps": [],
+        "gaps": {}
+      },
+      {
+        "intervention": "iv-2",
+        "ask": "approval",
+        "trigger": "risky_action",
+        "taken": false,
+        "interrupted": "pending",
+        "steps": [],
+        "gaps": {}
+      }
+    ]
+  },
+  {
+    "case": "payment-asks-again-then-rejected",
+    "ending": "terminated",
+    "steps": 3,
+    "verification": null,
+    "matches_fixture": true,
+    "states_seen": [
+      "ready",
+      "running",
+      "awaiting_approval",
+      "checking",
+      "running",
+      "awaiting_approval"
+    ],
+    "segments": [
+      {
+        "intervention": "iv-1",
+        "ask": "approval",
+        "trigger": "risky_action",
+        "taken": false,
+        "interrupted": "pending",
+        "steps": [],
+        "gaps": {}
+      },
+      {
+        "intervention": "iv-2",
+        "ask": "approval",
+        "trigger": "risky_action",
+        "taken": false,
+        "interrupted": "pending",
+        "steps": [],
+        "gaps": {}
+      }
+    ]
+  },
+  {
+    "case": "memo-typed-by-person-stays-withheld",
+    "ending": "completed",
+    "steps": 3,
+    "verification": "executor",
+    "matches_fixture": true,
+    "states_seen": [
+      "ready",
+      "running",
+      "paused"
+    ],
+    "segments": [
+      {
+        "intervention": "iv-1",
+        "ask": "person",
+        "trigger": "missing_user_input",
+        "taken": false,
+        "interrupted": "none",
+        "steps": [
+          {
+            "kind": "click",
+            "control": "textbox",
+            "owned": false,
+            "secret": false,
+            "requirement": "person_each_run"
+          },
+          {
+            "kind": "edit",
+            "control": "textbox",
+            "owned": false,
+            "secret": false,
+            "requirement": "validate_and_bind"
+          }
+        ],
+        "gaps": {}
+      }
+    ],
+    "leak_check": {
+      "typed_value_in_model_input": false,
+      "typed_value_in_journal": false
+    }
+  }
+]

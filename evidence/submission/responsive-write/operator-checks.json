@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-09-28T04:16:55.958281+00:00",
+  "operator": "Human intervention through active monitoring and input",
+  "method": "One live GPT-6 Luna discovery through discover.sh, followed by manual artifact review and two model-free replay.sh invocations",
+  "commands": [
+    "uv run --env-file ../t3code-4de9d2a3/.env scripts/discover.sh responsive write evidence/submission/responsive-write",
+    "scripts/replay.sh responsive evidence/submission/responsive-write member_id=NM000038 operator_id=OP0002 product=\"USD savings\" nickname=\"Emergency fund\" statement_delivery=paper",
+    "scripts/replay.sh responsive evidence/submission/responsive-write member_id=NM000002 operator_id=OP0002 product=\"USD savings\" nickname=\"Emergency fund\" statement_delivery=paper"
+  ],
+  "discovery": {
+    "status": "completed",
+    "steps": 27,
+    "executor_checks_passed": 6,
+    "executor_checks_total": 6,
+    "terminal_account_number": "AC0000160",
+    "database_comparison": "database-after-discovery.json",
+    "cli_exit_code": 0
+  },
+  "review": {
+    "saved": true,
+    "approved": true,
+    "capability_sha256": "6a61753f729bb3346d06db9f88d615b1ac3f0de051d77fbe49d806fb873e839a",
+    "inspection": "Checked parameterized member/operator inputs, write effect, each-run commit approval, member-bound result checks, output extraction, and absence of concrete discovery input/output values."
+  },
+  "replays": [
+    {
+      "journal": "replay-1.jsonl",
+      "member_id": "NM000038",
+      "member_status": "inactive",
+      "status": "needs_help",
+      "reason": "delivery_uncertain",
+      "steps": 18,
+      "cli_exit_code": 3,
+      "database_comparison": "database-after-replay-1.json",
+      "operator_decision": "The operator initially chose an inactive member by mistake for the success replay. After the app rejected the review, the operator declined to confirm an unobserved effect. The result is retained as an exceptional case, not an intended success or a classified ineligible outcome."
+    },
+    {
+      "journal": "replay-2.jsonl",
+      "member_id": "NM000002",
+      "member_status": "active",
+      "status": "succeeded",
+      "steps": 32,
+      "terminal_account_number": "AC0000161",
+      "cli_exit_code": 0,
+      "database_comparison": "database-after-replay-2.json",
+      "operator_decision": "Inspected and approved one proposed Commit for the requested synthetic account."
+    }
+  ],
+  "limits": [
+    "Native logs redact values. The comparison files retain the manually observed terminal values for synthetic fixture data only.",
+    "No independent HTTP commit counter was attached to these manual CLI runs; account comparison proves effects, not request counts.",
+    "The separate lost-reply evaluator records independent HTTP commit counts.",
+    "Individual observations do not establish a reliability rate."
+  ],
+  "browser_cleanup": "Discovery and both replay processes exited after result acknowledgement; the production session context closes each browser.",
+  "synthetic_data": true
+}

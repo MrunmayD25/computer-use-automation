@@ -1,0 +1,14 @@
+{"event": "RunStarted", "profile_id": "profile_1"}
+{"command": "start", "event": "Commanded", "intervention": "", "step": 0, "verdict": "accepted", "via": "panel"}
+{"confirmed": false, "event": "Interpreted", "outputs": 0, "records": 0}
+{"alternate": false, "event": "Observed", "mode": "visual", "provenance": "requested", "status": "complete", "step": 1}
+{"event": "Refused", "kind": "click", "reason": "record_evidence_missing", "step": 2}
+{"ask": "person", "event": "Paused", "intervention": "request_1", "step": 2, "trigger": "record_evidence_required"}
+{"control": "button", "detail": "", "event": "ManualAction", "frame": [], "intervention": "request_1", "kind": "click", "owned": false, "route": "route_1", "secret": false, "sequence": 1, "step": 2}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 2, "verdict": "accepted", "via": "panel"}
+{"event": "HandedBack", "events": 1, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_1", "passed": true, "step": 2}
+{"event": "Escalated", "intervention": "request_1", "outcome": "resumed", "step": 2, "trigger": "record_evidence_required"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_intervention", "status": "complete", "step": 2}
+{"event": "Decided", "kind": null, "step": 3}
+{"checks": 1, "event": "Verified", "passed": 1, "step": 3, "uncovered": 0}
+{"detail": "<redacted>", "ending": "completed", "event": "RunEnded", "steps": 3}

@@ -1,0 +1,15 @@
+{
+  "input": "lost_reply-case-5",
+  "fault": "lost_reply",
+  "fired": true,
+  "status": "needs_help",
+  "reason": "delivery_uncertain",
+  "node": "s19",
+  "matches_fixture": true,
+  "context": {
+    "operator": true,
+    "institution": true
+  },
+  "commits": 1,
+  "passed": true
+}

@@ -1,0 +1,201 @@
+{
+  "checked_at_utc": "2026-09-28T04:21:19.383181+00:00",
+  "application": "canvas-teller",
+  "task": "open_account",
+  "operator": "Human intervention through active monitoring and input",
+  "method": "One fresh live-model discovery through the real scripts/discover.sh command, manual intervention decisions, full exported-artifact inspection, then one model-free replay through scripts/replay.sh. No product or site edits and no retries to obtain a passing result.",
+  "database": {
+    "path": ".runtime/submission-checks/canvas.sqlite",
+    "created_from": ".runtime/evaluation.seed.sqlite",
+    "seed_sha256": "69f207327c4f24589c3d3528c0d1ae513b2658e731554efcd0e611c01038c454",
+    "isolation": "Private database used only by this canvas server and read-only observer processes",
+    "observer": "evaluation.integrated.DATABASE rebound to the private path only in the separate observer process; account rows read through every_account()"
+  },
+  "commands": [
+    "uv run --env-file ../t3code-4de9d2a3/.env scripts/discover.sh canvas write evidence/submission/canvas-write",
+    "scripts/replay.sh canvas evidence/submission/canvas-write member_id=NM000002 operator_id=OP0002 'product=USD savings' 'nickname=Emergency fund' statement_delivery=paper"
+  ],
+  "server_command": "node evaluation/canvas/server.mjs --database <absolute .runtime/submission-checks/canvas.sqlite> --services <absolute evaluation/runtime/computer-use-full-v1-0888bfa/environments/database/financial/dist/services.js> --port 4390",
+  "discovery": {
+    "inputs": {
+      "member_id": "NM000054",
+      "operator_id": "OP0002",
+      "product": "USD savings",
+      "nickname": "Holiday fund",
+      "statement_delivery": "paper"
+    },
+    "observed_terminal": "run completed after 34 steps: every check of the result passed on the live page; account_number: AC0000160; verified by executor, 6 of 6 checks",
+    "journal_ending": {
+      "detail": "<redacted>",
+      "ending": "completed",
+      "event": "RunEnded",
+      "steps": 34
+    },
+    "observed_outputs": {
+      "account_number": "AC0000160"
+    },
+    "executor_checks": {
+      "passed": 6,
+      "total": 6
+    },
+    "database_check": {
+      "before_count": 495,
+      "after_count": 496,
+      "before_rows_sha256": "47594f736f7a454b922c3f40f980f09fc0cc1593d2fa7a695e7cc1f295eabf10",
+      "after_rows_sha256": "30fde01884d70d15fe127a6fba238c18bd1a7bb8652dcee041697aa6d5d30763",
+      "added_business_rows": [
+        [
+          "AC0000160",
+          "NM000054",
+          "financial-demo-v1:northstar",
+          "northstar",
+          "USD savings",
+          "Holiday fund",
+          "paper"
+        ]
+      ],
+      "removed_or_changed_count": 0,
+      "exactly_one_intended_account": true,
+      "all_existing_accounts_unchanged": true,
+      "observed_returned_account_number": "AC0000160",
+      "database_account_number": "AC0000160",
+      "returned_account_number_exact_match": true,
+      "business_result_correct": true
+    },
+    "risky_approvals": 1,
+    "approval_basis": "Authorized the intended synthetic sandbox account in the displayed proposal; independent database effect check afterward. No claim that review-screen choices were visually inspected.",
+    "comparison": {
+      "member_id": "NM000003",
+      "stopped_before_first_change": true,
+      "stopping_step": 11,
+      "website_texts_confirmed": 10,
+      "automatically_confirmed_texts": 8,
+      "operator_confirmed_labels": [
+        "Account number:",
+        "Product:"
+      ],
+      "label_confirmation_evidence": "Literal label prefixes in evaluation/canvas/app.js lines578 and580. Dynamic account/product values following those prefixes were not approved as safe text."
+    },
+    "artifact_review": "Inspected all12 actions and five parameter bindings, account output extraction, six receipt checks, and mandatory Commit approval on each run; no private constants.",
+    "artifact_exported": true,
+    "artifact_approved": true,
+    "cli_exit_code": 0
+  },
+  "replay": {
+    "inputs": {
+      "member_id": "NM000002",
+      "operator_id": "OP0002",
+      "product": "USD savings",
+      "nickname": "Emergency fund",
+      "statement_delivery": "paper"
+    },
+    "observed_terminal": "replay succeeded: completed, 13 steps; account_number: Ac0000161",
+    "journal_ending": {
+      "event": "ReplayEnded",
+      "node": "node_13",
+      "reason": "completed",
+      "status": "succeeded",
+      "steps": 13
+    },
+    "observed_outputs": {
+      "account_number": "Ac0000161"
+    },
+    "risky_approvals": 1,
+    "approval_basis": "Authorized the intended synthetic sandbox inputs printed by the replay. The existing Chromium review screen was not visually inspected: T3 preview was a separate tab, and native screen capture failed. No screenshot verification is claimed.",
+    "database_check": {
+      "before_count": 496,
+      "after_count": 497,
+      "before_rows_sha256": "30fde01884d70d15fe127a6fba238c18bd1a7bb8652dcee041697aa6d5d30763",
+      "after_rows_sha256": "84b75ae99d3bca3459b63bf47f90cc0b473d041f886e399017ce3f484d450db7",
+      "added_business_rows": [
+        [
+          "AC0000161",
+          "NM000002",
+          "financial-demo-v1:northstar",
+          "northstar",
+          "USD savings",
+          "Emergency fund",
+          "paper"
+        ]
+      ],
+      "removed_or_changed_count": 0,
+      "exactly_one_intended_account": true,
+      "all_existing_accounts_unchanged": true,
+      "observed_returned_account_number": "Ac0000161",
+      "database_account_number": "AC0000161",
+      "returned_account_number_exact_match": false,
+      "business_result_correct": false
+    },
+    "evaluation_integrated_Truth_result": false,
+    "independent_result": "incorrect_output",
+    "explanation": "The CLI reported success and created exactly the requested account without changing other accounts, but returned Ac0000161 while SQLite stored AC0000161. Exact account-number verification failed. This case is not a fully correct end-to-end replay.",
+    "cli_exit_code": 0,
+    "retry_count": 0
+  },
+  "safe_text_changes": {
+    "path": "evaluation/sites/profiles/canvas-teller.safe-text.yaml",
+    "made_by": "Normal discovery export confirmation, not hand-editing",
+    "added_entries": [
+      {
+        "text": "Operator number",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "choose_option",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "enter_nickname",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "focus_operator_field",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "open_account_form",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "review_account",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "select_product",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "sign_on_operator",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "Account number:",
+        "confirmed_by": "person"
+      },
+      {
+        "text": "Product:",
+        "confirmed_by": "person"
+      }
+    ],
+    "product_generated_header_change": true
+  },
+  "artifact_hashes": {
+    "capability.draft.json": "4de21d55b37d23ce40a1bb251d1433056c6b9e5a82878dc127b5c950b7f1dc9a",
+    "capability.json": "b5fc4910b2ec9f4319977c82d5c0fce42cdf2b1e65266ee7783aac0ac6879fdc"
+  },
+  "limits": {
+    "network_commit_request_count": "Not instrumented by the manual CLI run; one risky action approval and exactly one intended account addition were observed per phase. No request-count claim.",
+    "fault_replay": "Not run for canvas; parent performed one fresh responsive lost-reply case.",
+    "reliability": "Single discovery and replay observation, not a reliability estimate."
+  },
+  "cleanup": {
+    "discovery_cli_exit_code": 0,
+    "replay_cli_exit_code": 0,
+    "browser_sessions_closed": "Both CLI processes exited and their session context cleanup completed.",
+    "private_server_pid": 21607,
+    "private_server_stopped": true,
+    "private_server_exit_code": 1,
+    "port_4390_closed": true
+  },
+  "data_note": "Explicit identifiers and account numbers in this observer record are synthetic fixture data. Native structured logs redact input and output values."
+}

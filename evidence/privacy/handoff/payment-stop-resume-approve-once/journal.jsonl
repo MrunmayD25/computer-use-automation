@@ -1,0 +1,20 @@
+{"event": "RunStarted", "profile_id": "profile_1"}
+{"command": "start", "event": "Commanded", "intervention": "", "step": 0, "verdict": "accepted", "via": "panel"}
+{"confirmed": false, "event": "Interpreted", "outputs": 0, "records": 0}
+{"command": "stop", "event": "Commanded", "intervention": "", "step": 1, "verdict": "accepted", "via": "panel"}
+{"event": "Superseded", "step": 1}
+{"ask": "pause", "event": "Paused", "intervention": "request_1", "step": 0, "trigger": null}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 0, "verdict": "accepted", "via": "panel"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_1", "passed": true, "step": 0}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_intervention", "status": "complete", "step": 0}
+{"action_step": 1, "event": "Flagged", "kind": "click", "route": "route_1", "source": "operator", "step": 1}
+{"event": "Decided", "kind": "click", "step": 1}
+{"ask": "approval", "event": "Paused", "intervention": "request_2", "step": 1, "trigger": "risky_action"}
+{"command": "approve", "event": "Commanded", "intervention": "request_2", "step": 1, "verdict": "accepted", "via": "panel"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_2", "passed": true, "step": 1}
+{"event": "Escalated", "intervention": "request_2", "outcome": "approved", "step": 1, "trigger": "risky_action"}
+{"event": "Acted", "flagged": false, "kind": "click", "outcome": "ok", "route": "route_1", "secret_name": null, "side_effects": [], "step": 1, "target_kind": "DomLocator", "value_source": "none"}
+{"alternate": false, "event": "Observed", "mode": "structured", "provenance": "post_action", "status": "complete", "step": 1}
+{"event": "Decided", "kind": null, "step": 2}
+{"checks": 1, "event": "Verified", "passed": 1, "step": 2, "uncovered": 0}
+{"detail": "<redacted>", "ending": "completed", "event": "RunEnded", "steps": 2}

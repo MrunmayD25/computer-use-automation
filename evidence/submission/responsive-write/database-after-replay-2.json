@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-28T04:15:32.292166+00:00",
+  "source": "Independent read-only SQLite comparison using evaluation.integrated.Truth",
+  "observed_terminal_status": "succeeded",
+  "observed_terminal_output": {
+    "account_number": "AC0000161"
+  },
+  "requested_inputs": {
+    "member_id": "NM000002",
+    "operator_id": "OP0002",
+    "product": "USD savings",
+    "nickname": "Emergency fund",
+    "statement_delivery": "paper"
+  },
+  "matches_requested_change_and_output": true,
+  "added_accounts": [
+    [
+      "AC0000161",
+      "NM000002",
+      "financial-demo-v1:northstar",
+      "northstar",
+      "USD savings",
+      "Emergency fund",
+      "paper"
+    ]
+  ],
+  "removed_or_changed_accounts": 0,
+  "synthetic_data": true
+}

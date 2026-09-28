@@ -1,0 +1,86 @@
+[project]
+name = "computeruse"
+version = "0.1.0"
+description = "Policy-gated computer-use automation for legacy back-office applications"
+readme = "README.md"
+authors = [
+    { name = "MrunmayD25", email = "115488654+MrunmayD25@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "pillow>=12.3.0",
+    "playwright>=1.63.0",
+    "pyyaml>=6.0.3",
+    "rapidocr-onnxruntime>=1.4",
+]
+
+[project.scripts]
+computeruse = "computeruse:main"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["tests", "src"]
+
+[build-system]
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.8",
+    "ty>=0.0.82",
+    "types-pyyaml>=6.0.12.20260906",
+]
+
+[tool.ruff.lint]
+select = [
+    "A",      # a name that shadows a builtin
+    "ANN",    # a missing annotation
+    "ARG",    # an argument nothing reads
+    "B",      # bugbear: mutable defaults, broad except, loop variable capture
+    "C90",    # branching past the agreed limit
+    "D",      # docstrings, numpy convention
+    "DTZ",    # a datetime without a timezone
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
+    "FURB",   # constructs with a clearer modern form
+    "G",      # a logging call that formats its own message
+    "I",      # import order
+    "ISC",    # an implicit string concatenation
+    "LOG",    # logging misuse
+    "N",      # naming
+    "PERF",   # a loop with an obvious faster form
+    "PIE",    # small redundancies
+    "PT",     # pytest style
+    "PTH",    # os.path where pathlib reads better
+    "RET",    # inconsistent returns
+    "RUF",    # ruff's own rules
+    "S",      # bandit: security and secret handling
+    "SIM",    # simplifications
+    "TRY",    # exception antipatterns
+    "UP",     # syntax older than the declared Python version
+    "W",      # pycodestyle warnings
+]
+ignore = [
+    "D105",    # a __post_init__ that only validates needs no docstring
+    "EM101",   # a message written at the raise site reads better than a temp name
+    "EM102",
+    "TRY003",  # ProfileError carries its message; one class per message helps nobody
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "ANN",           # a fixture reads fine without annotations
+    "D",             # the test name is the documentation
+    "S101",          # asserting is what a test does
+    "S105", "S106",  # secret names are test data; secret values never are
+    "S603", "S607",  # the suite runs the installed command on purpose
+]

@@ -1,0 +1,87 @@
+{"command": "replay", "event": "CommandStarted"}
+{"event": "Fields", "fields": {"member_id": "<member_id>", "nickname": "<nickname>", "operator_id": "<operator_id>", "product": "<product>", "statement_delivery": "<statement_delivery>"}, "source": "input"}
+{"event": "Fields", "fields": {"approver_passcode": "<approver_passcode>"}, "source": "secret"}
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"command": "start", "event": "Commanded", "intervention": "", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_1", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_3", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_4", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_4", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_4", "to": "node_5"}
+{"event": "NodeVisited", "kind": "action", "node": "node_5", "step": 5}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_5", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_5", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_5", "to": "node_6"}
+{"event": "NodeVisited", "kind": "action", "node": "node_6", "step": 6}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_6", "route": "route_3"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_6", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_6", "to": "node_7"}
+{"event": "NodeVisited", "kind": "action", "node": "node_7", "step": 7}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_7", "route": "route_3"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_7", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_7", "to": "node_8"}
+{"event": "NodeVisited", "kind": "action", "node": "node_8", "step": 8}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_8", "route": "route_4"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_8", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_8", "to": "node_9"}
+{"event": "NodeVisited", "kind": "action", "node": "node_9", "step": 9}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_9", "route": "route_5"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_9", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_9", "to": "node_10"}
+{"event": "NodeVisited", "kind": "action", "node": "node_10", "step": 10}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_10", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_10", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_10", "to": "node_11"}
+{"event": "NodeVisited", "kind": "action", "node": "node_11", "step": 11}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_11", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_11", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_11", "to": "node_12"}
+{"event": "NodeVisited", "kind": "action", "node": "node_12", "step": 12}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_12", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_12", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_12", "to": "node_13"}
+{"event": "NodeVisited", "kind": "action", "node": "node_13", "step": 13}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_13", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_13", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_13", "to": "node_14"}
+{"event": "NodeVisited", "kind": "action", "node": "node_14", "step": 14}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_14", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_14", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_14", "to": "node_15"}
+{"event": "NodeVisited", "kind": "action", "node": "node_15", "step": 15}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_15", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_15", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_15", "to": "node_16"}
+{"event": "NodeVisited", "kind": "action", "node": "node_16", "step": 16}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_16", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_16", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_16", "to": "node_17"}
+{"event": "NodeVisited", "kind": "action", "node": "node_17", "step": 17}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_17", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_17", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_17", "to": "node_18"}
+{"event": "NodeVisited", "kind": "action", "node": "node_18", "step": 18}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_18", "route": "route_7"}
+{"delivery": "uncertain", "event": "Dispatched", "kind": "click", "node": "node_18", "outcome": "ok"}
+{"ask": "approval", "event": "Paused", "intervention": "request_1", "step": 18, "trigger": "delivery_uncertain"}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 18, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "none", "intervention": "request_1", "passed": true, "step": 18}
+{"answer": "resumed", "ask": "approval", "event": "Helped", "node": "node_18", "reason": "delivery_uncertain"}
+{"checks": [{"form": "<redacted>", "frames": 0, "held": true, "match": "equals", "name": "constant", "role": "button", "scope": "", "tag": "present"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "dom", "frames": 0, "held": false, "match": "equals", "name": "", "role": "", "scope": "", "tag": "shows"}], "event": "FailureEvidence", "expected": ["shows", "at_route", "present"], "node": "node_18", "observed": {"controls": [{"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": true, "frame": 1, "group": 0, "protected": false, "role": "combobox", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "heading", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}], "counted": true, "dialog": false, "shown": 36, "status": "complete", "total": 36, "truncated": false}, "reason": "delivery_uncertain", "step": 18}
+{"event": "ReplayEnded", "node": "node_18", "reason": "delivery_uncertain", "status": "needs_help", "steps": 18}
+{"event": "Fields", "fields": {}, "source": "output"}
+{"ask": "person", "event": "Paused", "intervention": "request_1", "step": 0, "trigger": "replay_result"}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 0, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 1, "interrupted": "none", "intervention": "request_1", "passed": true, "step": 0}
+{"code": 3, "event": "CommandEnded"}

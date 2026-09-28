@@ -1,0 +1,1033 @@
+{
+  "application": {
+    "entry_route": "/",
+    "markers": [
+      {
+        "route": "/",
+        "type": "at_route"
+      },
+      {
+        "match": "equals",
+        "once": false,
+        "purpose": "state",
+        "record": null,
+        "target": "t11",
+        "type": "shows",
+        "value": {
+          "kind": "constant",
+          "name": "",
+          "value": "Operations portal"
+        }
+      },
+      {
+        "route": "/",
+        "type": "at_route"
+      },
+      {
+        "match": "equals",
+        "once": false,
+        "purpose": "state",
+        "record": null,
+        "target": "t11",
+        "type": "shows",
+        "value": {
+          "kind": "constant",
+          "name": "",
+          "value": "Operations portal"
+        }
+      },
+      {
+        "route": "/",
+        "type": "at_route"
+      },
+      {
+        "target": "t3",
+        "type": "present"
+      }
+    ],
+    "origin": "http://127.0.0.1:4360",
+    "profile_id": "evaluation/web-component-operations/sandbox",
+    "surface": "browser"
+  },
+  "capability_id": "member_status",
+  "entry": "s1",
+  "inputs": [
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "member_id",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "operator_id",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "limits": {
+    "max_help_requests": 5,
+    "max_settle_observations": 3,
+    "max_steps": 60,
+    "max_target_attempts": 4,
+    "max_wall_clock_s": 900,
+    "settle_interval_ms": 100
+  },
+  "nodes": [
+    {
+      "approval": "none",
+      "binding": "shell",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:shell",
+      "destination": null,
+      "effect": "open_menu",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s1",
+      "record": null,
+      "requires": [
+        {
+          "target": "t3",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t3",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s2",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t1",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "choose_operator",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:choose_operator",
+      "destination": null,
+      "effect": "select_operator",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s2",
+      "record": null,
+      "requires": [
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t2",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s3",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t4",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t5",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t6",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s3",
+      "record": null,
+      "requires": [
+        {
+          "target": "t5",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t5",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s4",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "members",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:members",
+      "destination": null,
+      "effect": "enter_search_query",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s4",
+      "record": null,
+      "requires": [
+        {
+          "target": "t6",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t6",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s5",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t6",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t6",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "members",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:members",
+      "destination": null,
+      "effect": "search",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s5",
+      "record": null,
+      "requires": [
+        {
+          "target": "t10",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t10",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "authored",
+          "to": "s6",
+          "when": [
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "state",
+              "record": null,
+              "target": "t7",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "member_id",
+                "value": ""
+              }
+            },
+            {
+              "route": "/",
+              "type": "at_route"
+            },
+            {
+              "target": "t8",
+              "type": "present"
+            },
+            {
+              "route": "/",
+              "type": "at_route"
+            },
+            {
+              "target": "t7",
+              "type": "present"
+            },
+            {
+              "route": "/",
+              "type": "at_route"
+            },
+            {
+              "target": "t4",
+              "type": "present"
+            },
+            {
+              "route": "/",
+              "type": "at_route"
+            },
+            {
+              "target": "t9",
+              "type": "present"
+            }
+          ]
+        },
+        {
+          "limit": 1,
+          "origin": "authored",
+          "to": "branch_1",
+          "when": [
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "record",
+              "record": null,
+              "target": "outcome_1",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "member_id",
+                "value": ""
+              }
+            },
+            {
+              "match": "equals",
+              "once": false,
+              "purpose": "state",
+              "record": null,
+              "target": "outcome_2",
+              "type": "shows",
+              "value": {
+                "kind": "constant",
+                "name": "",
+                "value": "0 of 0"
+              }
+            },
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "requirement",
+              "record": null,
+              "target": "outcome_3",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "operator_id",
+                "value": ""
+              }
+            },
+            {
+              "match": "equals",
+              "once": false,
+              "purpose": "requirement",
+              "record": null,
+              "target": "outcome_4",
+              "type": "shows",
+              "value": {
+                "kind": "constant",
+                "name": "",
+                "value": "Northstar"
+              }
+            }
+          ]
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": {
+        "kind": "output",
+        "name": "membership_status",
+        "value": ""
+      },
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s6",
+      "record": {
+        "match": "contains",
+        "prefix": "",
+        "relation": "row",
+        "source": "t7",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [
+        {
+          "target": "t8",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t8",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s7",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s7",
+      "record": null,
+      "requires": [
+        {
+          "target": "t7",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t7",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s8",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s8",
+      "record": null,
+      "requires": [
+        {
+          "target": "t4",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t4",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s9",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s9",
+      "record": null,
+      "requires": [
+        {
+          "target": "t9",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t9",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "done",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "checks": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "result",
+          "record": {
+            "match": "contains",
+            "prefix": "",
+            "relation": "row",
+            "source": "t7",
+            "suffix": "",
+            "value": {
+              "kind": "input",
+              "name": "member_id",
+              "value": ""
+            }
+          },
+          "target": "t8",
+          "type": "shows",
+          "value": {
+            "kind": "output",
+            "name": "membership_status",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "record",
+          "record": null,
+          "target": "t7",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "t4",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "t9",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Northstar"
+          }
+        }
+      ],
+      "node_id": "done",
+      "outcome": "",
+      "result": "success",
+      "type": "result"
+    },
+    {
+      "checks": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "record",
+          "record": null,
+          "target": "outcome_1",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "outcome_2",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "0 of 0"
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "outcome_3",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "outcome_4",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Northstar"
+          }
+        }
+      ],
+      "node_id": "branch_1",
+      "outcome": "record_not_found",
+      "result": "outcome",
+      "type": "result"
+    }
+  ],
+  "outcomes": [
+    "record_not_found"
+  ],
+  "outputs": [
+    {
+      "choices": [
+        "active",
+        "inactive",
+        "deceased",
+        "merged",
+        "Active",
+        "Inactive",
+        "Deceased",
+        "Merged"
+      ],
+      "max_length": 20,
+      "min_length": 1,
+      "name": "membership_status",
+      "required": true,
+      "type": "choice"
+    }
+  ],
+  "provenance": {
+    "kind": "discovered",
+    "recorder": "computeruse_recorder_1",
+    "review": "draft",
+    "run": "run-1440230f"
+  },
+  "restrictions": [],
+  "schema_version": 10,
+  "secrets": [],
+  "targets": [
+    {
+      "attribute": "css-class",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "div",
+      "target_id": "t1",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "ops-menu-popup"
+      }
+    },
+    {
+      "attribute": "data-value",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "button",
+      "target_id": "t2",
+      "type": "structural",
+      "value": {
+        "kind": "input",
+        "name": "operator_id",
+        "value": ""
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Menu \u25be"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t3",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "css-class",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "span",
+      "target_id": "t4",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "operator"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "generic",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t5",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Name, number, email or account\u2026"
+      },
+      "role": "textbox",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t6",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "td",
+      "target_id": "t7",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "td#0"
+      }
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "td",
+      "target_id": "t8",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "td#1"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Northstar"
+      },
+      "role": "generic",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t9",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Search"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t10",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Operations portal"
+      },
+      "role": "heading",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t11",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Name, number, email or account\u2026"
+      },
+      "role": "textbox",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "outcome_1",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "0 of 0"
+      },
+      "role": "paragraph",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "outcome_2",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "css-class",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "span",
+      "target_id": "outcome_3",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "operator"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Northstar"
+      },
+      "role": "generic",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "outcome_4",
+      "type": "structural",
+      "value": null
+    }
+  ],
+  "templates": [],
+  "variables": [],
+  "version": 1
+}

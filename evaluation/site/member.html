@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vendor Core 9.2 - Member 12345</title>
+  <link rel="stylesheet" href="/static/core.css">
+</head>
+<body>
+<h1>Member 12345</h1>
+<p>Dale Okonkwo, Riverside branch. Synthetic record, not a real person.</p>
+
+
+
+<section aria-label="Approval">
+  <h2>Approval pad</h2>
+  <p>These controls are painted into canvases and have no elements of their own.</p>
+  <div id="pads">
+    <canvas id="approval-pad" width="380" height="140"></canvas>
+    <canvas id="void-pad" width="380" height="140"></canvas>
+  </div>
+  <p>
+    <button type="button" id="move-control">Move the approval control</button>
+    <button type="button" id="clear-pad">Clear the approval pad</button>
+    <button type="button" id="swap-pads">Swap the two pads</button>
+    <button type="button" id="cover-pads">Cover the pads</button>
+  </p>
+  <p>Approval state: <output id="approval-state">pending</output></p>
+</section>
+
+<section aria-label="Approval queue">
+  <h3 id="record-heading">Record A</h3>
+  <p>One ledger entry, waiting for an approver.</p>
+  <p id="approve-slot"><button type="button" class="queue-approve">Approve</button></p>
+  <p>
+    <button type="button" id="move-approve">Move the approve button</button>
+    <button type="button" id="next-record">Load the next record</button>
+  </p>
+  <p>Approved record: <output id="approved-record">none</output></p>
+</section>
+
+<section aria-label="Savings">
+  <h2>Savings ledger</h2>
+  <iframe name="ledger" title="Savings ledger" src="/members/12345/savings"
+          width="640" height="240"></iframe>
+  <p>
+    <button type="button" id="detach-ledger">Replace the ledger contents</button>
+  </p>
+</section>
+
+<section aria-label="Notes">
+  <h2>Branch notes</h2>
+  <iframe name="notes" title="Branch notes" width="320" height="90"
+          srcdoc="<p>Notes written into the page, not fetched.</p>"></iframe>
+</section>
+
+<section aria-label="Holds">
+  <h2>Holds</h2>
+  <div id="hold-host"></div>
+  <ledger-card></ledger-card>
+  <p>Hold state: <output id="hold-state">held</output></p>
+</section>
+
+<section aria-label="Posting">
+  <h2>Posting lock</h2>
+  <p>
+    The next control carries no text and no accessible name.
+    <span class="posting-lock" title="Posting lock"
+          onclick="document.getElementById('lock-state').textContent = 'unlocked'"></span>
+  </p>
+  <p>Lock state: <output id="lock-state">locked</output></p>
+  <p>
+    <button type="button" id="post-entry">Post the entry</button>
+    <button type="button" id="reverse-entry">Reverse the entry</button>
+  </p>
+  <p>Posting state: <output id="dialog-state">idle</output></p>
+  <p>Reversal state: <output id="reverse-state">idle</output></p>
+</section>
+
+<section aria-label="Verification">
+  <h2>Approver verification</h2>
+  <form name="verify" onsubmit="return false">
+    <label for="approver-pin">Approver passcode</label>
+    <input id="approver-pin" name="approver_pin" type="password" autocomplete="current-password">
+    <label for="otp-code">One time code</label>
+    <input id="otp-code" name="otp_code" type="text" autocomplete="one-time-code"
+           value="synthetic-one-time-code">
+    <button type="submit">Verify</button>
+  </form>
+  <p>
+    <button type="button" id="prefill-passcode">Prefill the approver passcode</button>
+  </p>
+  <p>
+    <label for="branch-code" id="branch-code-label">Branch approval code</label>
+    <input id="branch-code" name="branch_code" type="text" autocomplete="off">
+  </p>
+  <p>
+    <button type="button" id="rename-branch-code">Rename the branch code field</button>
+    <button type="button" id="redraw-branch-code">Redraw the branch code field</button>
+  </p>
+  <p>
+    <label for="supervisor-code">Supervisor code</label>
+    <input id="supervisor-code" name="supervisor_code" type="text" autocomplete="off">
+  </p>
+</section>
+
+<section aria-label="Statements">
+  <h2>Statements</h2>
+  <button type="button" onclick="window.open('/members', '_blank')">
+    Open statements in a new window
+  </button>
+</section>
+
+<section aria-label="Archive" class="far-below">
+  <h2>Archive pad</h2>
+  <p>This canvas sits below the fold until the page is scrolled.</p>
+  <canvas id="archive-pad" width="380" height="140"></canvas>
+</section>
+
+<nav aria-label="Elsewhere">
+  <a href="/members/12345/savings/wire">Wire funds</a>
+  <a href="/admin">Administration</a>
+</nav>
+
+<script src="/static/pad.js"></script>
+<script src="/static/extras.js"></script>
+</body>
+</html>

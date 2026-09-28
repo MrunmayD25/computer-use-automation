@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-09-28T09:03:42.831008+00:00",
+  "app": "web-component-operations",
+  "task": "open_account",
+  "operator": "Human intervention through active monitoring and input",
+  "method": "Imported the project owner's completed discovery and replay from runs/components-write-test in the testing copy; raw run files are unchanged.",
+  "discovery": {
+    "journal_result": {
+      "detail": "<redacted>",
+      "ending": "completed",
+      "event": "RunEnded",
+      "steps": 19
+    },
+    "executor_result_checks": {
+      "checks": 7,
+      "event": "Verified",
+      "passed": 7,
+      "step": 19,
+      "uncovered": 0
+    },
+    "cli_exit_code": 0,
+    "write_approval_recorded": true,
+    "capability_review_approval_recorded": true
+  },
+  "review": {
+    "saved": true,
+    "approved": true,
+    "capability_sha256": "89be812f4e5d3a561cc48f113b773416056975d6e68f99fe2368611f2ac3432e",
+    "schema_valid": true,
+    "inspection": "Validated the draft and approved artifact, typed inputs, parameterized targets, account-number output, and risky-action approval. Journal and command-log boundaries agree."
+  },
+  "replays": [
+    {
+      "journal": "replay-1.jsonl",
+      "log": "replay-1.log",
+      "human_journal": "replay-1.human.jsonl",
+      "journal_result": {
+        "event": "ReplayEnded",
+        "node": "node_27",
+        "reason": "completed",
+        "status": "succeeded",
+        "steps": 27
+      },
+      "cli_exit_code": 0,
+      "write_approval_recorded": true,
+      "operator_confirmation": {
+        "member_id_matches_goal": true,
+        "nickname_matches_goal": true,
+        "basis": "Project owner confirmation during result import"
+      },
+      "terminal_account_number": null,
+      "output_matches_database": null,
+      "independent_end_to_end_result": "not_verified"
+    }
+  ],
+  "safe_text_changes": {
+    "path": "evaluation/sites/profiles/web-component-operations.safe-text.yaml",
+    "added": [
+      {
+        "text": "choose_operator",
+        "confirmed_by": "model"
+      },
+      {
+        "text": "review_open_account",
+        "confirmed_by": "model"
+      },
+      {
+        "text": "choose_member",
+        "confirmed_by": "model"
+      },
+      {
+        "text": "create_account",
+        "confirmed_by": "model"
+      },
+      {
+        "text": "search_input",
+        "confirmed_by": "model"
+      },
+      {
+        "text": "dd|Account number",
+        "confirmed_by": "person"
+      }
+    ],
+    "basis": "Existing confirmations from the testing copy, limited to text used by the imported capability."
+  },
+  "verification_limits": [
+    "Successful discovery and replay statuses establish execution completion; they do not independently prove every returned value or database effect.",
+    "Saved logs redact invocation and output values. The project owner confirmed that the member ID and nickname matched the goal; the terminal account number was not supplied.",
+    "No before/after database snapshots or independent HTTP commit counter accompanied this run. The current shared testing database cannot establish the earlier component replay result.",
+    "The capability declares no business-outcome branches; this write run does not demonstrate record_not_found handling.",
+    "A single successful retained replay is not a reliability estimate."
+  ],
+  "synthetic_data": true
+}

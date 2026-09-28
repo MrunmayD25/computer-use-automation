@@ -1,0 +1,74 @@
+# Website text confirmed safe to save in this site's capabilities.
+# Each word records how it was confirmed. A person may add, correct, or
+# remove words; the product removes words containing known private values.
+words:
+- text: Find member
+  confirmed_by: comparison
+- text: Member
+  confirmed_by: comparison
+- text: 'Membernumber:'
+  confirmed_by: comparison
+- text: Signout
+  confirmed_by: comparison
+- text: 'Status:'
+  confirmed_by: comparison
+- text: enter_member_number
+  confirmed_by: comparison
+- text: enter_operator_id
+  confirmed_by: comparison
+- text: search_member
+  confirmed_by: comparison
+- text: sign_on
+  confirmed_by: comparison
+- text: find_member
+  confirmed_by: comparison
+- text: enter_operator_number
+  confirmed_by: comparison
+- text: Operatornumber
+  confirmed_by: person
+- text: Open account
+  confirmed_by: person
+- text: Open an account
+  confirmed_by: person
+- text: Review
+  confirmed_by: person
+- text: Commit
+  confirmed_by: person
+- text: Account opened
+  confirmed_by: person
+- text: 'Accountnumber:'
+  confirmed_by: person
+- text: 'Nickname:'
+  confirmed_by: person
+- text: 'Statement delivery:'
+  confirmed_by: person
+- text: 'Operator:'
+  confirmed_by: comparison
+- text: Sign on
+  confirmed_by: comparison
+- text: ' Sign on '
+  confirmed_by: comparison
+- text: 'Member number:'
+  confirmed_by: comparison
+- text: enter_member_id
+  confirmed_by: comparison
+- text: Operator number
+  confirmed_by: comparison
+- text: choose_option
+  confirmed_by: comparison
+- text: enter_nickname
+  confirmed_by: comparison
+- text: focus_operator_field
+  confirmed_by: comparison
+- text: open_account_form
+  confirmed_by: comparison
+- text: review_account
+  confirmed_by: comparison
+- text: select_product
+  confirmed_by: comparison
+- text: sign_on_operator
+  confirmed_by: comparison
+- text: 'Account number:'
+  confirmed_by: person
+- text: 'Product:'
+  confirmed_by: person

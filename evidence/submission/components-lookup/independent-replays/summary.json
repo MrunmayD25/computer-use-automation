@@ -1,0 +1,77 @@
+[
+  {
+    "input": "case-1",
+    "expect": "success",
+    "status": "succeeded",
+    "reason": "completed",
+    "outcome": null,
+    "steps": 10,
+    "matches_fixture": true,
+    "context": {
+      "operator": true,
+      "institution": true
+    },
+    "commits": 0,
+    "passed": true
+  },
+  {
+    "input": "case-2",
+    "expect": "success",
+    "status": "succeeded",
+    "reason": "completed",
+    "outcome": null,
+    "steps": 10,
+    "matches_fixture": true,
+    "context": {
+      "operator": true,
+      "institution": true
+    },
+    "commits": 0,
+    "passed": true
+  },
+  {
+    "input": "case-3",
+    "expect": "record_not_found",
+    "status": "outcome",
+    "reason": "business_outcome",
+    "outcome": "record_not_found",
+    "steps": 6,
+    "matches_fixture": true,
+    "context": {
+      "operator": true,
+      "institution": true
+    },
+    "commits": 0,
+    "passed": true
+  },
+  {
+    "input": "slow-case-1",
+    "fault": "slow",
+    "fired": true,
+    "status": "succeeded",
+    "reason": "completed",
+    "node": "done",
+    "matches_fixture": true,
+    "context": {
+      "operator": true,
+      "institution": true
+    },
+    "commits": 0,
+    "passed": true
+  },
+  {
+    "input": "server_error-case-1",
+    "fault": "server_error",
+    "fired": true,
+    "status": "succeeded",
+    "reason": "completed",
+    "node": "done",
+    "matches_fixture": true,
+    "context": {
+      "operator": true,
+      "institution": true
+    },
+    "commits": 0,
+    "passed": true
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-09-28T03:55:31.647404+00:00",
+  "operator": "Human intervention through active monitoring and input",
+  "observations": [
+    {
+      "run": "discovery",
+      "member_id": "NM000054",
+      "terminal_status": "completed",
+      "terminal_output": "active",
+      "database_status": "active",
+      "matches": true
+    },
+    {
+      "run": "replay-1",
+      "member_id": "NM000038",
+      "terminal_status": "succeeded",
+      "terminal_output": "inactive",
+      "database_status": "inactive",
+      "matches": true
+    },
+    {
+      "run": "replay-2",
+      "member_id": "NM999999",
+      "terminal_status": "outcome",
+      "terminal_outcome": "record_not_found",
+      "database_record_absent": true,
+      "matches": true
+    }
+  ],
+  "capability_sha256": "0e3326fbc37339a6b48ab4b560340f2e47cefd29ab74c075d7d17452dc24c3b9",
+  "accounts_before": 495,
+  "accounts_after": 495,
+  "all_account_rows_unchanged": true,
+  "independent_automated_checks": "independent-replays/summary.json",
+  "synthetic_data": true
+}

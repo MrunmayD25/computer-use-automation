@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+.runtime/
+runs/
+node_modules/
+evaluation/runtime/
+
+# Local build, type-check, coverage, and editor artifacts.
+.ty_cache/
+.coverage
+htmlcov/
+build/
+.vscode/
+.idea/
+*.pyc
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

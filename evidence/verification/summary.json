@@ -1,0 +1,152 @@
+{
+  "checked_at": "2026-09-28",
+  "kind": "deterministic_lookup_replay_verification",
+  "model_calls": 0,
+  "application_source_changed": false,
+  "results": [
+    {
+      "input": "case-1",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 9,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "responsive"
+    },
+    {
+      "input": "case-2",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 9,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "responsive"
+    },
+    {
+      "input": "case-3",
+      "expect": "record_not_found",
+      "status": "outcome",
+      "reason": "business_outcome",
+      "outcome": "record_not_found",
+      "steps": 6,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "responsive"
+    },
+    {
+      "input": "case-1",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 10,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "components"
+    },
+    {
+      "input": "case-2",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 10,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "components"
+    },
+    {
+      "input": "case-3",
+      "expect": "record_not_found",
+      "status": "outcome",
+      "reason": "business_outcome",
+      "outcome": "record_not_found",
+      "steps": 6,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "components"
+    },
+    {
+      "input": "case-1",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 6,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "canvas"
+    },
+    {
+      "input": "case-2",
+      "expect": "success",
+      "status": "succeeded",
+      "reason": "completed",
+      "outcome": null,
+      "steps": 6,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "canvas"
+    },
+    {
+      "input": "case-3",
+      "expect": "record_not_found",
+      "status": "outcome",
+      "reason": "business_outcome",
+      "outcome": "record_not_found",
+      "steps": 5,
+      "matches_fixture": true,
+      "context": {
+        "operator": true,
+        "institution": true
+      },
+      "commits": 0,
+      "passed": true,
+      "site": "canvas"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-09-28T04:06:53.008793+00:00",
+  "member_id": "NM000038",
+  "database_member_status": "inactive",
+  "account_opening_requires": "active member",
+  "eligibility_source": "environments/database/financial/src/services/commands.ts:475 in the archived target app",
+  "observed_terminal_status": "needs_help",
+  "reason": "delivery_uncertain",
+  "business_outcome_classified": false,
+  "added_accounts": 0,
+  "removed_or_changed_accounts": 0,
+  "all_account_rows_unchanged": true,
+  "synthetic_data": true
+}

@@ -1,0 +1,10 @@
+body { font-family: Georgia, serif; margin: 1.5rem; color: #202020; }
+table { border-collapse: collapse; margin: 1rem 0; }
+th, td { border: 1px solid #b0b0b0; padding: 0.3rem 0.6rem; text-align: left; }
+section { border: 1px solid #d0d0d0; padding: 0.5rem 1rem; margin: 1rem 0; }
+iframe { border: 1px solid #d0d0d0; }
+.posting-lock {
+  display: inline-block; width: 18px; height: 18px;
+  background: #8a8a8a; vertical-align: middle; cursor: pointer;
+}
+.far-below { margin-top: 1400px; }

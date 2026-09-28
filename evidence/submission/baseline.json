@@ -1,0 +1,12 @@
+{
+  "account_count": 495,
+  "member_statuses": {
+    "NM000054": "active",
+    "NM000038": "inactive",
+    "NM000002": "active",
+    "NM000003": "active",
+    "NM000042": "deceased"
+  },
+  "synthetic_data": true,
+  "recorded_at_utc": "2026-09-28"
+}

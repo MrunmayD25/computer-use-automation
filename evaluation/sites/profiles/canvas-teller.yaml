@@ -1,0 +1,226 @@
+# A teller application drawn on one canvas stands in for a screen with no page
+# structure. Every screen, field, and button is painted, so only a screenshot
+# shows its content. The application uses the same financial service as the
+# other two sites, including their account validation rules.
+version: 7
+profile_id: evaluation/canvas-teller/sandbox
+environment: sandbox
+
+base_url: http://127.0.0.1:4390
+allow_routes:                 # one page; its screens are drawn, not loaded
+  - /
+deny_routes:
+  - /admin/**                 # administration is never part of servicing work
+allow_new_windows: false      # the teller never opens another window
+origins: []                   # no other address is reachable
+allow_downloads: false        # statements and exports stay on the page
+# The page posts no native form. The operation declarations identify Commit
+# and its Enter alias, alongside the effect restrictions below.
+submissions: risky
+
+# Operator-reviewed operation aliases. They identify input but grant no action.
+operations:
+- name: signon
+  operation: signon
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Operator number
+  kinds:
+  - click
+  - type
+  - press_key
+  target: '*'
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: find
+  operation: find
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Find a member
+  kinds:
+  - click
+  - type
+  - press_key
+  target: '*'
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: member
+  operation: member
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Member
+  kinds:
+  - click
+  - type
+  - press_key
+  target: '*'
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: prepare
+  operation: prepare
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Open an account
+  kinds:
+  - click
+  - type
+  - press_key
+  target: '*'
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: commit
+  operation: open_account
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Review
+  kinds:
+  - click
+  target: Commit
+  role: canvas
+  key: ''
+  submission: any
+  limit: risky
+- name: commit_key
+  operation: open_account
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Review
+  kinds:
+  - press_key
+  target: '*'
+  role: canvas
+  key: Enter
+  submission: any
+  limit: risky
+- name: back
+  operation: edit_account
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Review
+  kinds:
+  - click
+  target: Back
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: receipt
+  operation: new_search
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Account opened
+  kinds:
+  - click
+  target: New search
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+- name: duplicate_receipt
+  operation: new_search
+  route: /
+  frame: []
+  mode: visual
+  context:
+  - Already opened
+  kinds:
+  - click
+  target: New search
+  role: canvas
+  key: ''
+  submission: any
+  limit: by_effect
+
+actions:
+  observe:        {any: safe}
+  read:           {any: safe}
+  wait_for:       {any: safe}
+  assert:         {any: safe}
+  wait:           {any: safe}
+  scroll:         {any: safe}
+  move:           {any: safe}
+  click:
+    any: safe
+    effects:
+      create_record:    risky
+      create_account:   risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      close_record:     risky
+      remove_record:    deny
+  press_key:
+    any: safe
+    effects:
+      create_record:    risky
+      create_account:   risky
+      update_record:    risky
+      commit_change:    risky
+      post_transaction: risky
+      transfer_funds:   risky
+      submit_payment:   risky
+      approve_request:  risky
+      deny_request:     risky
+      close_record:     risky
+      remove_record:    deny
+  type:           {any: safe}
+
+perception:
+  allowed_modes: [structured, visual]
+  max_alternate_observations_per_step: 5
+
+records:                      # a painted screen holds no structured record evidence
+  actions: []
+  routes: []
+
+budgets:
+  max_steps: 60               # opening an account takes about 20 painted steps
+  max_wall_clock_s: 900       # automation time; waiting on a person is not counted
+  max_retries_per_step: 4
+  max_navigations: 30
+
+secrets:
+  approver_passcode: {env: APPROVER_PASSCODE}
+
+escalation:
+  handoff_timeout_s: 900
+  on_timeout: abort
+
+confirmation:                 # a second test record; confirms website text before a save
+  inputs:
+    member_id: NM000003       # a different name from the discovered member
+    operator_id: OP0002
+  outcomes:                   # inputs that make the application say no, one per answer
+    record_not_found:         # a member the sandbox does not hold
+      member_id: NM999998
+    # Ineligible and permission-denied cases are not listed: their refusal
+    # comes after a step the main capability never takes, so a discovery of
+    # them cannot become a branch. A replay that meets one stops for a person.

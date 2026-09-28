@@ -1,0 +1,81 @@
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_1", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_3", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_4", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_4", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_4", "to": "node_5"}
+{"event": "NodeVisited", "kind": "action", "node": "node_5", "step": 5}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_5", "route": "route_2"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_5", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_5", "to": "node_6"}
+{"event": "NodeVisited", "kind": "action", "node": "node_6", "step": 6}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_6", "route": "route_3"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_6", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_6", "to": "node_7"}
+{"event": "NodeVisited", "kind": "action", "node": "node_7", "step": 7}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_7", "route": "route_3"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_7", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_7", "to": "node_8"}
+{"event": "NodeVisited", "kind": "action", "node": "node_8", "step": 8}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_8", "route": "route_4"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_8", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_8", "to": "node_9"}
+{"event": "NodeVisited", "kind": "action", "node": "node_9", "step": 9}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_9", "route": "route_5"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_9", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_9", "to": "node_10"}
+{"event": "NodeVisited", "kind": "action", "node": "node_10", "step": 10}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_10", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_10", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_10", "to": "node_11"}
+{"event": "NodeVisited", "kind": "action", "node": "node_11", "step": 11}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_11", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_11", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_11", "to": "node_12"}
+{"event": "NodeVisited", "kind": "action", "node": "node_12", "step": 12}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_12", "route": "route_6"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_12", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_12", "to": "node_13"}
+{"event": "NodeVisited", "kind": "action", "node": "node_13", "step": 13}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_13", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_13", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_13", "to": "node_14"}
+{"event": "NodeVisited", "kind": "action", "node": "node_14", "step": 14}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_14", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_14", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_14", "to": "node_15"}
+{"event": "NodeVisited", "kind": "action", "node": "node_15", "step": 15}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_15", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_15", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_15", "to": "node_16"}
+{"event": "NodeVisited", "kind": "action", "node": "node_16", "step": 16}
+{"approval": false, "denial": null, "event": "Gated", "kind": "select", "node": "node_16", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "select", "node": "node_16", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_16", "to": "node_17"}
+{"event": "NodeVisited", "kind": "action", "node": "node_17", "step": 17}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_17", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_17", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_17", "to": "node_18"}
+{"event": "NodeVisited", "kind": "action", "node": "node_18", "step": 18}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_18", "route": "route_7"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_18", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_18", "to": "node_19"}
+{"event": "NodeVisited", "kind": "action", "node": "node_19", "step": 19}
+{"approval": true, "denial": null, "event": "Gated", "kind": "click", "node": "node_19", "route": "route_8"}
+{"answer": "approved", "ask": "approval", "event": "Helped", "node": "node_19", "reason": "approval_required"}
+{"approval": true, "denial": null, "event": "Gated", "kind": "click", "node": "node_19", "route": "route_8"}
+{"delivery": "uncertain", "event": "Dispatched", "kind": "click", "node": "node_19", "outcome": "blocked"}
+{"answer": "resumed", "ask": "approval", "event": "Helped", "node": "node_19", "reason": "delivery_uncertain"}
+{"checks": [{"form": "<redacted>", "frames": 0, "held": true, "match": "equals", "name": "constant", "role": "button", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": true, "match": "equals", "name": "constant", "role": "button", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}, {"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "link", "scope": "", "tag": "present"}], "event": "FailureEvidence", "expected": ["present", "at_route", "present", "at_route", "present"], "node": "node_19", "observed": {"controls": [{"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": true, "frame": 1, "group": 0, "protected": false, "role": "combobox", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "link", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "heading", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "heading", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 1, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 1, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 2, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 2, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 3, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 3, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 4, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 4, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "heading", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 5, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 5, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 6, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 6, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 7, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 7, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 8, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 8, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 9, "protected": false, "role": "columnheader", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 9, "protected": false, "role": "cell", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "heading", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "button", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "button", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "button", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}], "counted": true, "dialog": false, "shown": 55, "status": "complete", "total": 55, "truncated": false}, "reason": "delivery_uncertain", "step": 19}
+{"event": "ReplayEnded", "node": "node_19", "reason": "delivery_uncertain", "status": "needs_help", "steps": 19}

@@ -1,0 +1,62 @@
+# Policy for the local evaluation site. The fixed port matches the demo
+# command. Tests write a copy with the port assigned to them.
+version: 4
+profile_id: local-eval/vendor-core-9.2/sandbox
+environment: sandbox
+
+base_url: http://127.0.0.1:8787
+allow_routes:
+  - /members
+  - /members/:id
+  - /members/:id/savings
+  - /queue/**
+  - /payments
+  - /static/**
+deny_routes:
+  - /members/:id/savings/wire
+allow_new_windows: false
+allow_downloads: false
+
+actions:
+  observe:   {any: safe}
+  read:      {any: safe}
+  wait_for:  {any: safe}
+  assert:    {any: safe}
+  navigate:  {any: safe}
+  scroll:    {any: safe}
+  click:     {any: safe}
+  double_click: {any: safe}
+  move:      {any: safe}
+  drag:      {any: safe}
+  wait:      {any: safe}
+  type:      {any: safe}
+  select:    {any: safe}
+  press_key: {any: safe}
+
+perception:
+  allowed_modes:
+    - structured
+    - visual
+  max_alternate_observations_per_step: 1
+
+# The approval queues and payment form act on one member at a time. Only the
+# member number on screen identifies that member. A click or key press in
+# those controls must name the affected member.
+records:
+  actions: [click, press_key]
+  routes:
+    - /queue/**
+    - /payments
+
+budgets:
+  max_steps: 24
+  max_wall_clock_s: 240
+  max_retries_per_step: 2
+  max_navigations: 8
+
+secrets:
+  approver_passcode: {env: APPROVER_PASSCODE}
+
+escalation:
+  handoff_timeout_s: 300
+  on_timeout: abort

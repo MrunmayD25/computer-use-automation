@@ -1,0 +1,14 @@
+Bundled OCR model attribution
+
+en_PP-OCRv4_rec_mobile.onnx is the unmodified English PP-OCRv4 mobile
+recognizer from RapidOCR's official model registry, based on PaddleOCR.
+Both upstream projects use Apache-2.0; their license terms and notices are
+retained alongside this file in LICENSE-PaddleOCR and LICENSE-RapidOCR.
+
+Model source:
+https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.9.2/onnx/PP-OCRv4/rec/en_PP-OCRv4_rec_mobile.onnx
+
+Registry:
+https://github.com/RapidAI/RapidOCR/blob/v3.9.2/python/rapidocr/default_models.yaml
+
+SHA-256: e8770c967605983d1570cdf5352041dfb68fa0c21664f49f47b155abd3e0e318

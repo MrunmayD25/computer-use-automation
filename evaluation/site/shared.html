@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vendor Core 9.2 - Shared approvals</title>
+  <link rel="stylesheet" href="/static/core.css">
+</head>
+<body>
+<h1>Shared approvals</h1>
+
+<!-- Two members in one section, each in a card of its own. -->
+<section aria-label="Pending members">
+  <h2>Pending members</h2>
+  <div id="cards">
+    <div class="member-card">
+      <dl><dt>Member number</dt><dd id="card-number-a">10001</dd></dl>
+      <button type="button" id="card-approve-a">Approve</button>
+      <canvas class="card-pad" width="180" height="60"></canvas>
+    </div>
+    <div class="member-card">
+      <dl><dt>Member number</dt><dd id="card-number-b">10002</dd></dl>
+      <button type="button" id="card-approve-b">Approve</button>
+      <canvas class="card-pad" width="180" height="60"></canvas>
+    </div>
+  </div>
+  <p><button type="button" id="redraw-cards">Redraw the cards</button></p>
+</section>
+
+<!-- Two members in one section with no card around either. Only the
+     buttons' own descriptions say which member each one approves. -->
+<section aria-label="Flat list">
+  <h2>Flat list</h2>
+  <dl>
+    <dt>Member number</dt><dd id="flat-number-a">10003</dd>
+    <dt>Member number</dt><dd id="flat-number-b">10004</dd>
+  </dl>
+  <button type="button" id="flat-approve-a" aria-describedby="flat-number-a">Approve</button>
+  <button type="button" id="flat-approve-b" aria-describedby="flat-number-b">Approve</button>
+</section>
+
+<p>Approved member: <output id="approved-member">none</output></p>
+
+<script src="/static/shared.js"></script>
+</body>
+</html>

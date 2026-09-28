@@ -1,0 +1,43 @@
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_1", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_3", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_4", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_4", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_4", "to": "node_5"}
+{"event": "NodeVisited", "kind": "action", "node": "node_5", "step": 5}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_5", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_5", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_5", "to": "node_6"}
+{"event": "NodeVisited", "kind": "action", "node": "node_6", "step": 6}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_6", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_6", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_6", "to": "node_7"}
+{"event": "NodeVisited", "kind": "action", "node": "node_7", "step": 7}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_7", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_7", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_7", "to": "node_8"}
+{"event": "NodeVisited", "kind": "action", "node": "node_8", "step": 8}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_8", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_8", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_8", "to": "node_9"}
+{"event": "NodeVisited", "kind": "action", "node": "node_9", "step": 9}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_9", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "read", "node": "node_9", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_9", "to": "node_10"}
+{"event": "NodeVisited", "kind": "result", "node": "node_10", "step": 10}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_10", "route": "route_1"}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_10", "route": "route_1"}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_10", "route": "route_1"}
+{"approval": false, "denial": null, "event": "Gated", "kind": "read", "node": "node_10", "route": "route_1"}
+{"event": "ReplayEnded", "node": "node_10", "reason": "completed", "status": "succeeded", "steps": 10}

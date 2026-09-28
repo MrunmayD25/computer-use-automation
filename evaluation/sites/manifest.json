@@ -1,0 +1,18 @@
+{
+  "archive": "full-v1.zip",
+  "sha256": "07fca40053138e93a36c3237e1bb50acfce629cf837d036ac87d54c203f681e0",
+  "applications": {
+    "legacy-banking-console": 4310,
+    "legacy-postback-portal": 4320,
+    "desktop-mdi-console": 4330,
+    "terminal-host-banking": 4340,
+    "virtualized-service-workspace": 4350,
+    "web-component-operations": 4360,
+    "white-label-modern": 4361,
+    "white-label-classic": 4362,
+    "white-label-responsive": 4363,
+    "document-ledger-workstation": 4370,
+    "federated-servicing-suite": 4380
+  },
+  "purpose": "All eleven local evaluation applications and their latest matching verification runs; no Git history, superseded runs, or development handoff material"
+}

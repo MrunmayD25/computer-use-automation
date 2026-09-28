@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 1000,
+      "choices": []
+    },
+    {
+      "name": "operator_id",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 1000,
+      "choices": []
+    },
+    {
+      "name": "product",
+      "type": "choice",
+      "required": true,
+      "min_length": 1,
+      "max_length": 40,
+      "choices": [
+        "EUR checking",
+        "EUR savings",
+        "JPY checking",
+        "JPY savings",
+        "KWD checking",
+        "KWD savings",
+        "USD checking",
+        "USD savings"
+      ]
+    },
+    {
+      "name": "nickname",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 1000,
+      "choices": []
+    },
+    {
+      "name": "statement_delivery",
+      "type": "choice",
+      "required": true,
+      "min_length": 1,
+      "max_length": 20,
+      "choices": [
+        "paper",
+        "electronic"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "account_number",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 40,
+      "choices": []
+    }
+  ],
+  "bindings": [
+    {
+      "input": "operator_id",
+      "field": "Operator"
+    }
+  ]
+}

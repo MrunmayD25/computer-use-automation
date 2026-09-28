@@ -1,0 +1,28 @@
+# One goal in an operator's words for each task and evaluation application.
+# Every goal names the operator, member, task, and output. It names an institution
+# only when the application offers a choice. A white-label portal already
+# represents one institution, so its operator would not name the vendor
+# tenant. Goals do not name screens, controls, routes, or expected answers.
+member_status:
+  canvas-teller: >-
+    As operator OP0002, look up member NM000054 and return their membership status as
+    one output named membership_status.
+  web-component-operations: >-
+    As operator OP0002 at Northstar, look up member NM000054 and return
+    their membership status as one output named membership_status.
+  white-label-responsive: >-
+    As operator OP0002, look up member NM000054 and return their membership status as
+    one output named membership_status.
+open_account:
+  canvas-teller: >-
+    As operator OP0002, open a new USD savings account for member NM000054 with the
+    nickname Holiday fund and paper statements, and return the new account's
+    number as one output named account_number.
+  web-component-operations: >-
+    As operator OP0002 at Northstar, open a new USD savings account for
+    member NM000054 with the nickname Holiday fund and paper statements, and
+    return the new account's number as one output named account_number.
+  white-label-responsive: >-
+    As operator OP0002, open a new USD savings account for member NM000054 with the
+    nickname Holiday fund and paper statements, and return the new account's
+    number as one output named account_number.

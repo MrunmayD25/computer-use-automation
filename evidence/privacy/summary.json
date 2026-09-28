@@ -1,0 +1,94 @@
+{
+  "scope": "Approved automatic privacy logging implementation; local fixtures only",
+  "model_calls": 0,
+  "replay_cases": [
+    {
+      "case": "uninterrupted",
+      "command_exit_code": 0,
+      "replay_status": "succeeded",
+      "replay_reason": "completed",
+      "submitted_posts": 1,
+      "submitted_values_match_fixture": true,
+      "live_output_value_verified": false,
+      "failure_snapshot_present": false,
+      "local_server_closed": true
+    },
+    {
+      "case": "approve",
+      "command_exit_code": 0,
+      "replay_status": "succeeded",
+      "replay_reason": "completed",
+      "submitted_posts": 1,
+      "submitted_values_match_fixture": true,
+      "live_output_value_verified": true,
+      "failure_snapshot_present": false,
+      "local_server_closed": true
+    },
+    {
+      "case": "terminate",
+      "command_exit_code": 3,
+      "replay_status": "terminated",
+      "replay_reason": "operator_terminated",
+      "submitted_posts": 0,
+      "submitted_values_match_fixture": true,
+      "live_output_value_verified": false,
+      "failure_snapshot_present": true,
+      "local_server_closed": true
+    },
+    {
+      "case": "failed_check",
+      "command_exit_code": 3,
+      "replay_status": "help_timed_out",
+      "replay_reason": "help_timed_out",
+      "submitted_posts": 1,
+      "submitted_values_match_fixture": true,
+      "live_output_value_verified": false,
+      "failure_snapshot_present": true,
+      "local_server_closed": true
+    }
+  ],
+  "handoff": {
+    "cases": 4,
+    "matched_fixture": 4,
+    "completed": 3,
+    "terminated": 1,
+    "typed_value_in_model_input": false,
+    "typed_value_in_journal": false,
+    "scripted_operator": true
+  },
+  "retained_file_sha256": {
+    "handoff/command.log": "c18b528bddc1e0cdcb48e98f5e343444995e611578410017dbd1f09edcdcf71e",
+    "handoff/memo-typed-by-person-stays-withheld/control.jsonl": "45026b4fb8c4b33e27da6b2c9b81b4b3a47443d01d83cc0880043900a570bf69",
+    "handoff/memo-typed-by-person-stays-withheld/journal.jsonl": "be94e84d94d4983303322e7fd3baaa57eeca44fa8db9cfbe59267e0cb916ccf3",
+    "handoff/payment-asks-again-then-rejected/control.jsonl": "f53bc8cd9f4962d336c1cec1d9c844a06d3922d4a38d3d16d783ced9a8bc05af",
+    "handoff/payment-asks-again-then-rejected/journal.jsonl": "10f82a7ab317a284daa289c49781b85e1091a69a98777f7c9a19da9507c551c5",
+    "handoff/payment-stop-resume-approve-once/control.jsonl": "b8f8610257ac32be9393c99459466cd0d106e1f6a29ac051eeb5bba0a5be081d",
+    "handoff/payment-stop-resume-approve-once/journal.jsonl": "adf28ea10939a71061fd3a3ed8a4f94dd3d3a331e51055d5ad08846e3706fa57",
+    "handoff/queue-person-performs-record-step/control.jsonl": "893e9fd2b3ad68d17240366327294dbdea2a39d2e8dfd7a4dcefb289499d4f64",
+    "handoff/queue-person-performs-record-step/journal.jsonl": "fd0a579e6a932c4ed377e9b0c5689b886c8c5baed6f189f3ccc9871a8c5de2c9",
+    "handoff/summary.json": "3e7aed9e988e91020bdbc12ec854afac3548894d3c73f1ce6f4b4427423d14be",
+    "replay/approve/capability.json": "3bd15472be5cb998cac62372292355ff8a607c2c9b45e64b2ee7da1b59958f14",
+    "replay/approve/command.log": "a3dce559fa238b910dea2d2117de42c2c445b1aa5e398708131ee71952015e57",
+    "replay/approve/replay.human.jsonl": "e987a4b90cfa795f5b584dc52d173468a4a321f2677bc341a98b58a481dd4865",
+    "replay/approve/replay.jsonl": "0d9a976d2ae48cb873da62d15e374362ed7419e7ea86d8c00b5f2d628f621c47",
+    "replay/failed_check/capability.json": "b139141fc9b849d992e46aec198cd3b416bfe40ac93755f2ca6f4d061dca0d35",
+    "replay/failed_check/command.log": "429265c4a445e4325fab44a07c53a2e19228a3fe94a1ae66ab28aa9525ea3bf5",
+    "replay/failed_check/replay.human.jsonl": "febb3d4dd6ffa99ef06c14e0317b7f0843d951928a44c6211318fe4fa45af665",
+    "replay/failed_check/replay.jsonl": "3350e4eb195781aa9d0005d4d05b441ba8a51bbbb497918d64dc162f9dcbddbd",
+    "replay/terminate/capability.json": "ee9d7d0ef85e2599c394434f48430ecc195d2caafd7a94777226a0c84c13901a",
+    "replay/terminate/command.log": "cf90c39746dedac2a3ffc6bb9f9e650c2405ac1626c24347e70e2785ea14f296",
+    "replay/terminate/replay.human.jsonl": "55b6c88fa9fd5027cffd3dab1fb354678870981463b89a37cdacf516724ae4f4",
+    "replay/terminate/replay.jsonl": "eba4568cea0da2469cda842226510ad88c788699f7c5a56c99bbcbf692f1d19e",
+    "replay/uninterrupted/capability.json": "255053abe4c4bfb50714c5ee21119febc28efcfe3f9fa21ceb8f0e81592e8ded",
+    "replay/uninterrupted/command.log": "d4595e367dec1ac5de51c5279d4274e0ef367c2e0123fca7154c6eb0488afd81",
+    "replay/uninterrupted/replay.human.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay/uninterrupted/replay.jsonl": "df0be5928d12faa42683108c262f308ce7b565b46cdf3e99338acedab321d6e2"
+  },
+  "retention_check": {
+    "files_including_summary": 27,
+    "injected_marker_matches": 0,
+    "screenshots": 0,
+    "json_records_parse": true
+  },
+  "website_bundle": "../submission"
+}

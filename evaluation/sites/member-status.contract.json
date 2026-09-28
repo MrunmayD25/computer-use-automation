@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 1000,
+      "choices": []
+    },
+    {
+      "name": "operator_id",
+      "type": "text",
+      "required": true,
+      "min_length": 1,
+      "max_length": 1000,
+      "choices": []
+    }
+  ],
+  "outputs": [
+    {
+      "name": "membership_status",
+      "type": "choice",
+      "required": true,
+      "min_length": 1,
+      "max_length": 20,
+      "choices": [
+        "active",
+        "inactive",
+        "deceased",
+        "merged",
+        "Active",
+        "Inactive",
+        "Deceased",
+        "Merged"
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "input": "operator_id",
+      "field": "Operator"
+    }
+  ]
+}

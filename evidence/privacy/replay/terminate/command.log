@@ -1,0 +1,34 @@
+{"command": "replay", "event": "CommandStarted"}
+{"event": "Fields", "fields": {"memo": "<memo>"}, "source": "input"}
+{"event": "Fields", "fields": {"session_pin": "<session_pin>"}, "source": "secret"}
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "navigate", "node": "node_1", "route": "route_1"}
+{"command": "stop", "event": "Commanded", "intervention": "", "step": 1, "verdict": "accepted", "via": "terminal"}
+{"ask": "pause", "event": "Paused", "intervention": "request_1", "step": 1, "trigger": null}
+{"command": "resume", "event": "Commanded", "intervention": "request_1", "step": 1, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "performed", "intervention": "request_1", "passed": true, "step": 1}
+{"delivery": "completed", "event": "Dispatched", "kind": "navigate", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_3", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": true, "denial": null, "event": "Gated", "kind": "click", "node": "node_4", "route": "route_1"}
+{"ask": "approval", "event": "Paused", "intervention": "request_2", "step": 4, "trigger": "risky_action"}
+{"command": "resume", "event": "Commanded", "intervention": "request_2", "step": 4, "verdict": "accepted", "via": "terminal"}
+{"event": "HandedBack", "events": 0, "failure": null, "gaps": 0, "interrupted": "pending", "intervention": "request_2", "passed": true, "step": 4}
+{"answer": "resumed", "ask": "approval", "event": "Helped", "node": "node_4", "reason": "approval_required"}
+{"approval": true, "denial": null, "event": "Gated", "kind": "click", "node": "node_4", "route": "route_1"}
+{"ask": "approval", "event": "Paused", "intervention": "request_3", "step": 4, "trigger": "risky_action"}
+{"command": "terminate", "event": "Commanded", "intervention": "", "step": 4, "verdict": "accepted", "via": "terminal"}
+{"answer": "terminated", "ask": "approval", "event": "Helped", "node": "node_4", "reason": "approval_required"}
+{"checks": [{"form": "<redacted>", "frames": 0, "held": false, "match": "equals", "name": "constant", "role": "heading", "scope": "", "tag": "shows"}], "event": "FailureEvidence", "expected": [], "node": "node_4", "observed": {"controls": [{"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": true, "frame": 1, "group": 0, "protected": false, "role": "textbox", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": true, "role": "textbox", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}, {"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "button", "visible": true}], "counted": true, "dialog": false, "shown": 6, "status": "complete", "total": 6, "truncated": false}, "reason": "operator_terminated", "step": 4}
+{"event": "ReplayEnded", "node": "node_4", "reason": "operator_terminated", "status": "terminated", "steps": 4}
+{"event": "Fields", "fields": {}, "source": "output"}
+{"code": 3, "event": "CommandEnded"}

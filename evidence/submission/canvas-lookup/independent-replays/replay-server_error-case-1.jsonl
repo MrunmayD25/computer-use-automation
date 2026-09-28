@@ -1,0 +1,19 @@
+{"capability": "capability_1", "event": "ReplayStarted", "profile_id": "profile_1", "run": "run_1", "version": 1}
+{"event": "NodeVisited", "kind": "action", "node": "node_1", "step": 1}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_1", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_1", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_1", "to": "node_2"}
+{"event": "NodeVisited", "kind": "action", "node": "node_2", "step": 2}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_2", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "click", "node": "node_2", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_2", "to": "node_3"}
+{"event": "NodeVisited", "kind": "action", "node": "node_3", "step": 3}
+{"approval": false, "denial": null, "event": "Gated", "kind": "type", "node": "node_3", "route": "route_1"}
+{"delivery": "completed", "event": "Dispatched", "kind": "type", "node": "node_3", "outcome": "ok"}
+{"edge": 0, "event": "Transitioned", "node": "node_3", "to": "node_4"}
+{"event": "NodeVisited", "kind": "action", "node": "node_4", "step": 4}
+{"approval": false, "denial": null, "event": "Gated", "kind": "click", "node": "node_4", "route": "route_1"}
+{"delivery": "uncertain", "event": "Dispatched", "kind": "click", "node": "node_4", "outcome": "ok"}
+{"answer": "timed_out", "ask": "approval", "event": "Helped", "node": "node_4", "reason": "delivery_uncertain"}
+{"checks": [{"form": "visual", "frames": 0, "held": true, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "present"}, {"form": "visual", "frames": 0, "held": false, "match": "", "name": "", "role": "", "scope": "", "tag": "shows"}], "event": "FailureEvidence", "expected": ["shows", "shows", "shows"], "node": "node_4", "observed": {"controls": [{"enabled": true, "field": false, "frame": 1, "group": 0, "protected": false, "role": "other", "visible": true}], "counted": true, "dialog": false, "shown": 1, "status": "complete", "total": 1, "truncated": false}, "reason": "help_timed_out", "step": 4}
+{"event": "ReplayEnded", "node": "node_4", "reason": "help_timed_out", "status": "help_timed_out", "steps": 4}

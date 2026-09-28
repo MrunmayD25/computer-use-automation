@@ -1,0 +1,2120 @@
+{
+  "application": {
+    "entry_route": "/",
+    "markers": [
+      {
+        "route": "/",
+        "type": "at_route"
+      },
+      {
+        "match": "equals",
+        "once": false,
+        "purpose": "state",
+        "record": null,
+        "target": "t27",
+        "type": "shows",
+        "value": {
+          "kind": "constant",
+          "name": "",
+          "value": "Operations portal"
+        }
+      },
+      {
+        "route": "/",
+        "type": "at_route"
+      },
+      {
+        "target": "t3",
+        "type": "present"
+      }
+    ],
+    "origin": "http://127.0.0.1:4360",
+    "profile_id": "evaluation/web-component-operations/sandbox",
+    "surface": "browser"
+  },
+  "capability_id": "open_account",
+  "entry": "s1",
+  "inputs": [
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "member_id",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "operator_id",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "choices": [
+        "EUR checking",
+        "EUR savings",
+        "JPY checking",
+        "JPY savings",
+        "KWD checking",
+        "KWD savings",
+        "USD checking",
+        "USD savings"
+      ],
+      "max_length": 40,
+      "min_length": 1,
+      "name": "product",
+      "required": true,
+      "type": "choice"
+    },
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "nickname",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "choices": [
+        "paper",
+        "electronic"
+      ],
+      "max_length": 20,
+      "min_length": 1,
+      "name": "statement_delivery",
+      "required": true,
+      "type": "choice"
+    }
+  ],
+  "limits": {
+    "max_help_requests": 5,
+    "max_settle_observations": 3,
+    "max_steps": 60,
+    "max_target_attempts": 4,
+    "max_wall_clock_s": 900,
+    "settle_interval_ms": 100
+  },
+  "nodes": [
+    {
+      "approval": "none",
+      "binding": "shell",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:shell",
+      "destination": null,
+      "effect": "open_menu",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s1",
+      "record": null,
+      "requires": [
+        {
+          "target": "t3",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t3",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s2",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t1",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "choose_operator",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:choose_operator",
+      "destination": null,
+      "effect": "select_operator",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s2",
+      "record": null,
+      "requires": [
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t2",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s3",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t4",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t4",
+          "type": "present"
+        },
+        {
+          "match": "contains",
+          "once": true,
+          "purpose": "state",
+          "record": null,
+          "target": "t4",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t5",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s3",
+      "record": null,
+      "requires": [
+        {
+          "target": "t4",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t4",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s4",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "members",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:members",
+      "destination": null,
+      "effect": "search_input",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s4",
+      "record": null,
+      "requires": [
+        {
+          "target": "t5",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t5",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s5",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t5",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "members",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:members",
+      "destination": null,
+      "effect": "search",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s5",
+      "record": null,
+      "requires": [
+        {
+          "target": "t8",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t8",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s6",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t6",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t7",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "shell",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:shell",
+      "destination": null,
+      "effect": "open_accounts",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s6",
+      "record": null,
+      "requires": [
+        {
+          "target": "t7",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t7",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s7",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "target": "t9",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t10",
+          "type": "present"
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t10",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Accounts"
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t11",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s7",
+      "record": null,
+      "requires": [
+        {
+          "target": "t10",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t10",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s8",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "open_form",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:open_form",
+      "destination": null,
+      "effect": "open_account_form",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s8",
+      "record": null,
+      "requires": [
+        {
+          "target": "t11",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t11",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s9",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "target": "t12",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t13",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "prepare_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:prepare_account",
+      "destination": null,
+      "effect": "enter_member",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s9",
+      "record": null,
+      "requires": [
+        {
+          "target": "t13",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t13",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s10",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t13",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "choose_picker",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:choose_picker",
+      "destination": null,
+      "effect": "choose_member",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s10",
+      "record": null,
+      "requires": [
+        {
+          "target": "t14",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t14",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s11",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "target": "t14",
+          "type": "absent"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t13",
+          "type": "present"
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t13",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t15",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s11",
+      "record": null,
+      "requires": [
+        {
+          "target": "t13",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t13",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s12",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "prepare_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:prepare_account",
+      "destination": null,
+      "effect": "enter_product",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s12",
+      "record": null,
+      "requires": [
+        {
+          "target": "t15",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t15",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s13",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "product",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t15",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "product",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t15",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "product",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s13",
+      "record": null,
+      "requires": [
+        {
+          "target": "t15",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t15",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s14",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "prepare_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:prepare_account",
+      "destination": null,
+      "effect": "enter_nickname",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s14",
+      "record": null,
+      "requires": [
+        {
+          "target": "t16",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t16",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s15",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "nickname",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t16",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "nickname",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t16",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "nickname",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s15",
+      "record": null,
+      "requires": [
+        {
+          "target": "t16",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t16",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s16",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "prepare_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:prepare_account",
+      "destination": null,
+      "effect": "choose_option",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "select",
+      "mandatory": false,
+      "node_id": "s16",
+      "record": null,
+      "requires": [
+        {
+          "target": "t17",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t17",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s17",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "statement_delivery",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t17",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "statement_delivery",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t17",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "statement_delivery",
+            "value": ""
+          }
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s17",
+      "record": null,
+      "requires": [
+        {
+          "target": "t17",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t17",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s18",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "prepare_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:prepare_account",
+      "destination": null,
+      "effect": "review_open_account",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s18",
+      "record": null,
+      "requires": [
+        {
+          "target": "t12",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t12",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s19",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t18",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "each_run",
+      "binding": "execute_account",
+      "business": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:open_account",
+      "destination": null,
+      "effect": "create_account",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": true,
+      "node_id": "s19",
+      "record": null,
+      "requires": [
+        {
+          "target": "t18",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t18",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s20",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "t19",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "target": "t20",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t21",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t22",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t23",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t24",
+          "type": "present"
+        },
+        {
+          "route": "/",
+          "type": "at_route"
+        },
+        {
+          "target": "t25",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": {
+        "kind": "output",
+        "name": "account_number",
+        "value": ""
+      },
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s20",
+      "record": {
+        "match": "equals",
+        "prefix": "",
+        "relation": "container",
+        "source": "t22",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [
+        {
+          "target": "t21",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t21",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s21",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s21",
+      "record": null,
+      "requires": [
+        {
+          "target": "t22",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t22",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s22",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s22",
+      "record": null,
+      "requires": [
+        {
+          "target": "t4",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t4",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s23",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s23",
+      "record": null,
+      "requires": [
+        {
+          "target": "t26",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t26",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s24",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s24",
+      "record": {
+        "match": "equals",
+        "prefix": "",
+        "relation": "container",
+        "source": "t22",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [
+        {
+          "target": "t23",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t23",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s25",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s25",
+      "record": {
+        "match": "equals",
+        "prefix": "",
+        "relation": "container",
+        "source": "t22",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [
+        {
+          "target": "t24",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t24",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s26",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s26",
+      "record": {
+        "match": "equals",
+        "prefix": "",
+        "relation": "container",
+        "source": "t22",
+        "suffix": "",
+        "value": {
+          "kind": "input",
+          "name": "member_id",
+          "value": ""
+        }
+      },
+      "requires": [
+        {
+          "target": "t25",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t25",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "done",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "checks": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "result",
+          "record": {
+            "match": "equals",
+            "prefix": "",
+            "relation": "container",
+            "source": "t22",
+            "suffix": "",
+            "value": {
+              "kind": "input",
+              "name": "member_id",
+              "value": ""
+            }
+          },
+          "target": "t21",
+          "type": "shows",
+          "value": {
+            "kind": "output",
+            "name": "account_number",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "record",
+          "record": null,
+          "target": "t22",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "t4",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "t26",
+          "type": "shows",
+          "value": {
+            "kind": "constant",
+            "name": "",
+            "value": "Northstar"
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": {
+            "match": "equals",
+            "prefix": "",
+            "relation": "container",
+            "source": "t22",
+            "suffix": "",
+            "value": {
+              "kind": "input",
+              "name": "member_id",
+              "value": ""
+            }
+          },
+          "target": "t23",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "product",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": {
+            "match": "equals",
+            "prefix": "",
+            "relation": "container",
+            "source": "t22",
+            "suffix": "",
+            "value": {
+              "kind": "input",
+              "name": "member_id",
+              "value": ""
+            }
+          },
+          "target": "t24",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "nickname",
+            "value": ""
+          }
+        },
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "requirement",
+          "record": {
+            "match": "equals",
+            "prefix": "",
+            "relation": "container",
+            "source": "t22",
+            "suffix": "",
+            "value": {
+              "kind": "input",
+              "name": "member_id",
+              "value": ""
+            }
+          },
+          "target": "t25",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "statement_delivery",
+            "value": ""
+          }
+        }
+      ],
+      "node_id": "done",
+      "outcome": "",
+      "result": "success",
+      "type": "result"
+    }
+  ],
+  "outcomes": [],
+  "outputs": [
+    {
+      "choices": [],
+      "max_length": 40,
+      "min_length": 1,
+      "name": "account_number",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "provenance": {
+    "kind": "discovered",
+    "recorder": "computeruse_recorder_1",
+    "review": "draft",
+    "run": "run-bd6836b9"
+  },
+  "restrictions": [
+    {
+      "key": "",
+      "kinds": [
+        "navigate",
+        "scroll",
+        "click",
+        "double_click",
+        "move",
+        "drag",
+        "type",
+        "select",
+        "press_key",
+        "dismiss_dialog",
+        "accept_dialog"
+      ],
+      "limit": "risky",
+      "route": "/",
+      "scope": "operation",
+      "source": "operator",
+      "target": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:open_account"
+    },
+    {
+      "key": "",
+      "kinds": [
+        "navigate",
+        "scroll",
+        "click",
+        "double_click",
+        "move",
+        "drag",
+        "type",
+        "select",
+        "press_key",
+        "dismiss_dialog",
+        "accept_dialog"
+      ],
+      "limit": "risky",
+      "route": "/",
+      "scope": "operation",
+      "source": "proposal",
+      "target": "6eaf3fa06349db0ed7c222d71f4a4befb12ffc4c67bca071a99b7fb4e99e5010:open_account"
+    }
+  ],
+  "schema_version": 10,
+  "secrets": [],
+  "targets": [
+    {
+      "attribute": "css-class",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "div",
+      "target_id": "t1",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "ops-menu-popup"
+      }
+    },
+    {
+      "attribute": "data-value",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "button",
+      "target_id": "t2",
+      "type": "structural",
+      "value": {
+        "kind": "input",
+        "name": "operator_id",
+        "value": ""
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Menu \u25be"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t3",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "css-class",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "span",
+      "target_id": "t4",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "operator"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Name, number, email or account\u2026"
+      },
+      "role": "textbox",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t5",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "td",
+      "target_id": "t6",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "td#0"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Accounts"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t7",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Search"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t8",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Account number, member or nickname\u2026"
+      },
+      "role": "textbox",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t9",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Accounts"
+      },
+      "role": "heading",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t10",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Open account"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t11",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Review"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t12",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "input",
+      "target_id": "t13",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "input|Member"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "contains",
+      "name": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "role": "option",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t14",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "input",
+      "target_id": "t15",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "input|Product"
+      }
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "input",
+      "target_id": "t16",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "input|Nickname"
+      }
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "select",
+      "target_id": "t17",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "select|Statement delivery"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Execute"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t18",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "role": "generic",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t19",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Open receipt"
+      },
+      "role": "button",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t20",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": "slot",
+      "form": "dom",
+      "frame": [],
+      "match": "equals",
+      "name": null,
+      "role": "",
+      "route": "/",
+      "scope": null,
+      "tag": "dd",
+      "target_id": "t21",
+      "type": "structural",
+      "value": {
+        "kind": "constant",
+        "name": "",
+        "value": "dd|Account number"
+      }
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "role": "definition",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t22",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "input",
+        "name": "product",
+        "value": ""
+      },
+      "role": "definition",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t23",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "input",
+        "name": "nickname",
+        "value": ""
+      },
+      "role": "definition",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t24",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "input",
+        "name": "statement_delivery",
+        "value": ""
+      },
+      "role": "definition",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t25",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Northstar"
+      },
+      "role": "generic",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t26",
+      "type": "structural",
+      "value": null
+    },
+    {
+      "attribute": null,
+      "form": "accessibility",
+      "frame": [],
+      "match": "equals",
+      "name": {
+        "kind": "constant",
+        "name": "",
+        "value": "Operations portal"
+      },
+      "role": "heading",
+      "route": "/",
+      "scope": null,
+      "tag": "",
+      "target_id": "t27",
+      "type": "structural",
+      "value": null
+    }
+  ],
+  "templates": [],
+  "variables": [],
+  "version": 1
+}

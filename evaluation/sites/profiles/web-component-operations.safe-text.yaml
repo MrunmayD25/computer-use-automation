@@ -1,0 +1,90 @@
+# Website text confirmed safe to save in this site's capabilities.
+# Each word records how it was confirmed. A person may add, correct, or
+# remove words; the product removes words containing known private values.
+words:
+- text: Members
+  confirmed_by: comparison
+- text: Menu ▾
+  confirmed_by: comparison
+- text: Name, number, email or account…
+  confirmed_by: comparison
+- text: Northstar
+  confirmed_by: comparison
+- text: Operations portal
+  confirmed_by: comparison
+- text: Search
+  confirmed_by: comparison
+- text: enter_member_search
+  confirmed_by: comparison
+- text: open_members
+  confirmed_by: comparison
+- text: open_menu
+  confirmed_by: comparison
+- text: search_member
+  confirmed_by: comparison
+- text: select_operator
+  confirmed_by: comparison
+- text: td|1
+  confirmed_by: comparison
+- text: search
+  confirmed_by: comparison
+- text: search_members
+  confirmed_by: comparison
+- text: open_operator_menu
+  confirmed_by: comparison
+- text: switch_operator
+  confirmed_by: comparison
+- text: 0 of 0
+  confirmed_by: outcome
+- text: enter_search_query
+  confirmed_by: comparison
+- text: Account number, member or nickname…
+  confirmed_by: comparison
+- text: Accounts
+  confirmed_by: comparison
+- text: Execute
+  confirmed_by: comparison
+- text: Open account
+  confirmed_by: comparison
+- text: Review
+  confirmed_by: comparison
+- text: choose_option
+  confirmed_by: comparison
+- text: enter_member
+  confirmed_by: comparison
+- text: enter_nickname
+  confirmed_by: comparison
+- text: enter_product
+  confirmed_by: comparison
+- text: input|Member
+  confirmed_by: comparison
+- text: input|Nickname
+  confirmed_by: comparison
+- text: input|Product
+  confirmed_by: comparison
+- text: open_account_form
+  confirmed_by: comparison
+- text: open_accounts
+  confirmed_by: comparison
+- text: review_account
+  confirmed_by: comparison
+- text: select|Statement delivery
+  confirmed_by: comparison
+- text: Open receipt
+  confirmed_by: person
+- text: operator
+  confirmed_by: comparison
+- text: ops-menu-popup
+  confirmed_by: comparison
+- text: choose_operator
+  confirmed_by: model
+- text: review_open_account
+  confirmed_by: model
+- text: choose_member
+  confirmed_by: model
+- text: create_account
+  confirmed_by: model
+- text: search_input
+  confirmed_by: model
+- text: dd|Account number
+  confirmed_by: person

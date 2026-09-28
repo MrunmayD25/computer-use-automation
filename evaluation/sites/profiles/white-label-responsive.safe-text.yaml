@@ -1,0 +1,194 @@
+# Website text confirmed safe to save in this site's capabilities.
+# Each word records how it was confirmed. A person may add, correct, or
+# remove words; the product only adds words it has confirmed.
+words:
+- text: Name, number, email or phone
+  confirmed_by: comparison
+- text: Northstar
+  confirmed_by: comparison
+- text: Northstar Mutual · Operations
+  confirmed_by: comparison
+- text: Search
+  confirmed_by: comparison
+- text: Sign on
+  confirmed_by: comparison
+- text: enter_member_search
+  confirmed_by: comparison
+- text: search_member
+  confirmed_by: comparison
+- text: sign_on
+  confirmed_by: comparison
+- text: td|Status
+  confirmed_by: comparison
+- text: members
+  confirmed_by: comparison
+- text: open_member
+  confirmed_by: comparison
+- text: open_member_search_results
+  confirmed_by: comparison
+- text: q
+  confirmed_by: comparison
+- text: No records.
+  confirmed_by: outcome
+- text: Home
+  confirmed_by: comparison
+- text: search
+  confirmed_by: comparison
+- text: enter_member_id
+  confirmed_by: comparison
+- text: Sign out
+  confirmed_by: comparison
+- text: Accounts
+  confirmed_by: comparison
+- text: Apply
+  confirmed_by: comparison
+- text: Commit
+  confirmed_by: comparison
+- text: Continue to details
+  confirmed_by: comparison
+- text: From
+  confirmed_by: comparison
+- text: Member
+  confirmed_by: comparison
+- text: Member number
+  confirmed_by: comparison
+- text: Open account
+  confirmed_by: comparison
+- text: Product
+  confirmed_by: comparison
+- text: Review change
+  confirmed_by: comparison
+- text: Start another Open account
+  confirmed_by: comparison
+- text: Statement delivery
+  confirmed_by: comparison
+- text: accounts module
+  confirmed_by: comparison
+- text: a|
+  confirmed_by: comparison
+- text: choose_product
+  confirmed_by: comparison
+- text: choose_statement_delivery
+  confirmed_by: comparison
+- text: continue_to_account_details
+  confirmed_by: comparison
+- text: enter_member
+  confirmed_by: comparison
+- text: enter_nickname
+  confirmed_by: comparison
+- text: filter_accounts
+  confirmed_by: comparison
+- text: input|
+  confirmed_by: comparison
+- text: open_account
+  confirmed_by: comparison
+- text: open_account_form
+  confirmed_by: comparison
+- text: open_accounts
+  confirmed_by: comparison
+- text: operator
+  confirmed_by: comparison
+- text: review_account_details
+  confirmed_by: comparison
+- text: select|
+  confirmed_by: comparison
+- text: td|Account number
+  confirmed_by: comparison
+- text: td|Reference
+  confirmed_by: comparison
+- text: a|Member
+  confirmed_by: comparison
+- text: a|Receipt
+  confirmed_by: comparison
+- text: enter_account_nickname
+  confirmed_by: comparison
+- text: enter_account_search
+  confirmed_by: comparison
+- text: enter_member_identifier
+  confirmed_by: comparison
+- text: input|Nickname
+  confirmed_by: comparison
+- text: open_account_opening_receipt
+  confirmed_by: comparison
+- text: review_account_opening
+  confirmed_by: comparison
+- text: select_usd_savings_product
+  confirmed_by: comparison
+- text: select|Product
+  confirmed_by: comparison
+- text: select|Statement delivery
+  confirmed_by: comparison
+- text: sign_in
+  confirmed_by: comparison
+- text: td|Actor
+  confirmed_by: comparison
+- text: td|Member
+  confirmed_by: comparison
+- text: td|Nickname
+  confirmed_by: comparison
+- text: td|Product
+  confirmed_by: comparison
+- text: td|nickname
+  confirmed_by: comparison
+- text: a|Number
+  confirmed_by: comparison
+- text: enter_member_filter
+  confirmed_by: comparison
+- text: open_receipt
+  confirmed_by: comparison
+- text: select_product
+  confirmed_by: comparison
+- text: select_statement_delivery
+  confirmed_by: comparison
+- text: select|Operator
+  confirmed_by: comparison
+- text: continue_to_details
+  confirmed_by: comparison
+- text: review_account
+  confirmed_by: comparison
+- text: select_account_product
+  confirmed_by: comparison
+- text: Activity
+  confirmed_by: comparison
+- text: create_account
+  confirmed_by: comparison
+- text: enter_search_query
+  confirmed_by: comparison
+- text: set_statement_delivery
+  confirmed_by: comparison
+- text: ' opened for '
+  confirmed_by: comparison
+- text: .
+  confirmed_by: comparison
+- text: 'Account '
+  confirmed_by: comparison
+- text: apply_filter
+  confirmed_by: comparison
+- text: choose_option
+  confirmed_by: comparison
+- text: continue_account_setup
+  confirmed_by: comparison
+- text: enter_search_criteria
+  confirmed_by: comparison
+- text: review_account_change
+  confirmed_by: comparison
+- text: td|Summary
+  confirmed_by: comparison
+- text: submit_review
+  confirmed_by: person
+- text: fill_field
+  confirmed_by: comparison
+- text: review_change
+  confirmed_by: comparison
+- text: enter_filter
+  confirmed_by: person
+- text: td|Business reference
+  confirmed_by: person
+- text: td|Number
+  confirmed_by: person
+- text: Open account — review
+  confirmed_by: comparison
+- text: fill_search_field
+  confirmed_by: comparison
+- text: enter_search_term
+  confirmed_by: comparison

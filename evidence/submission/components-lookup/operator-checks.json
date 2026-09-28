@@ -1,0 +1,105 @@
+{
+  "started_at": "2026-09-28T03:53:16.433605+00:00",
+  "checked_at": "2026-09-28T03:59:38.108770+00:00",
+  "app": "web-component-operations",
+  "task": "member_status",
+  "operator": "Human intervention through active monitoring and input",
+  "run_method": "Unmodified real discover.sh and replay.sh CLI; live GPT-6 Luna discovery, model-free replays; no scripted UI actions or paid retries",
+  "commands": [
+    "uv run --env-file ../t3code-4de9d2a3/.env scripts/discover.sh components lookup evidence/submission/components-lookup",
+    "scripts/replay.sh components evidence/submission/components-lookup member_id=NM000038 operator_id=OP0002",
+    "scripts/replay.sh components evidence/submission/components-lookup member_id=NM999999 operator_id=OP0002"
+  ],
+  "discovery": {
+    "journal_result": {
+      "detail": "<redacted>",
+      "ending": "completed",
+      "event": "RunEnded",
+      "steps": 8
+    },
+    "inputs": {
+      "member_id": "NM000054",
+      "operator_id": "OP0002"
+    },
+    "terminal_output": {
+      "membership_status": "active"
+    },
+    "independent_expected_status": "active",
+    "output_matches_database": true,
+    "comparison_record": "NM000003",
+    "comparison_result": "Every step ran and the success checks held; two website texts confirmed",
+    "outcome_discovery_record": "NM999998",
+    "learned_outcomes": [
+      "record_not_found"
+    ],
+    "approved_artifact": "capability.json",
+    "review": "Inspected graph before approval: member/operator input references; membership status is bound to the matched member row; operator and Northstar tenant checks; read-only effects; no saved record literals"
+  },
+  "replays": [
+    {
+      "journal": "replay-1.jsonl",
+      "journal_result": {
+        "event": "ReplayEnded",
+        "node": "node_10",
+        "reason": "completed",
+        "status": "succeeded",
+        "steps": 10
+      },
+      "inputs": {
+        "member_id": "NM000038",
+        "operator_id": "OP0002"
+      },
+      "terminal_output": {
+        "membership_status": "inactive"
+      },
+      "independent_expected_status": "inactive",
+      "output_matches_database": true,
+      "runtime_interventions": 0
+    },
+    {
+      "journal": "replay-2.jsonl",
+      "journal_result": {
+        "event": "ReplayEnded",
+        "node": "node_6",
+        "reason": "business_outcome",
+        "status": "outcome",
+        "steps": 6
+      },
+      "inputs": {
+        "member_id": "NM999999",
+        "operator_id": "OP0002"
+      },
+      "terminal_business_outcome": "record_not_found",
+      "independent_matching_member_count": 0,
+      "outcome_matches_database": true,
+      "runtime_interventions": 0
+    }
+  ],
+  "account_invariants": {
+    "method": "evaluation.integrated.every_account before discovery and after both replays; compares complete account rows across institutions",
+    "before_count": 495,
+    "after_count": 495,
+    "before_sha256": "47594f736f7a454b922c3f40f980f09fc0cc1593d2fa7a695e7cc1f295eabf10",
+    "after_sha256": "47594f736f7a454b922c3f40f980f09fc0cc1593d2fa7a695e7cc1f295eabf10",
+    "unchanged": true
+  },
+  "safe_text_changes": {
+    "path": "evaluation/sites/profiles/web-component-operations.safe-text.yaml",
+    "added": [
+      {
+        "text": "operator",
+        "confirmed_by": "comparison"
+      },
+      {
+        "text": "ops-menu-popup",
+        "confirmed_by": "comparison"
+      }
+    ],
+    "manual_edits": false
+  },
+  "verification_limits": [
+    "Outputs were observed in the live operator terminal; persisted execution logs redact values by design. This file records those observations for synthetic fixture data.",
+    "These are individual fresh observations, not a reliability estimate.",
+    "No fault injection performed in this lookup run."
+  ]
+}

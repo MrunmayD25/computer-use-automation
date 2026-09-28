@@ -1,0 +1,536 @@
+{
+  "application": {
+    "entry_route": "/",
+    "markers": [],
+    "origin": "http://127.0.0.1:4390",
+    "profile_id": "evaluation/canvas-teller/sandbox",
+    "surface": "browser"
+  },
+  "capability_id": "member_status",
+  "entry": "s1",
+  "inputs": [
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "member_id",
+      "required": true,
+      "type": "text"
+    },
+    {
+      "choices": [],
+      "max_length": 1000,
+      "min_length": 1,
+      "name": "operator_id",
+      "required": true,
+      "type": "text"
+    }
+  ],
+  "limits": {
+    "max_help_requests": 5,
+    "max_settle_observations": 3,
+    "max_steps": 60,
+    "max_target_attempts": 4,
+    "max_wall_clock_s": 900,
+    "settle_interval_ms": 100
+  },
+  "nodes": [
+    {
+      "approval": "none",
+      "binding": "signon",
+      "business": "caba83e46160bad9c20f8729b68419c28bed50ae846389a32bd68c50674754c4:signon",
+      "destination": null,
+      "effect": "enter_operator_id",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s1",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/",
+      "target": "t1",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s2",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "operator_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "signon",
+      "business": "caba83e46160bad9c20f8729b68419c28bed50ae846389a32bd68c50674754c4:signon",
+      "destination": null,
+      "effect": "sign_on",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s2",
+      "record": null,
+      "requires": [
+        {
+          "target": "t3",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t3",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s3",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": [
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ]
+    },
+    {
+      "approval": "none",
+      "binding": "find",
+      "business": "caba83e46160bad9c20f8729b68419c28bed50ae846389a32bd68c50674754c4:find",
+      "destination": null,
+      "effect": "enter_member_number",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "type",
+      "mandatory": false,
+      "node_id": "s3",
+      "record": null,
+      "requires": [],
+      "result_record": null,
+      "route": "/",
+      "target": "t1",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "s4",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": {
+        "kind": "input",
+        "name": "member_id",
+        "value": ""
+      },
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "find",
+      "business": "caba83e46160bad9c20f8729b68419c28bed50ae846389a32bd68c50674754c4:find",
+      "destination": null,
+      "effect": "search_member",
+      "extraction": null,
+      "into": null,
+      "introduced": "",
+      "kind": "click",
+      "mandatory": false,
+      "node_id": "s4",
+      "record": null,
+      "requires": [
+        {
+          "target": "t2",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t2",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "authored",
+          "to": "s5",
+          "when": [
+            {
+              "target": "t4",
+              "type": "present"
+            },
+            {
+              "target": "t5",
+              "type": "present"
+            },
+            {
+              "target": "t5",
+              "type": "present"
+            }
+          ]
+        },
+        {
+          "limit": 1,
+          "origin": "authored",
+          "to": "branch_1",
+          "when": [
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "state",
+              "record": null,
+              "target": "outcome_1",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "member_id",
+                "value": ""
+              }
+            },
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "record",
+              "record": null,
+              "target": "outcome_1",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "member_id",
+                "value": ""
+              }
+            },
+            {
+              "match": "contains",
+              "once": false,
+              "purpose": "requirement",
+              "record": null,
+              "target": "outcome_2",
+              "type": "shows",
+              "value": {
+                "kind": "input",
+                "name": "operator_id",
+                "value": ""
+              }
+            }
+          ]
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "approval": "none",
+      "binding": "",
+      "business": "",
+      "destination": null,
+      "effect": null,
+      "extraction": null,
+      "into": {
+        "kind": "output",
+        "name": "membership_status",
+        "value": ""
+      },
+      "introduced": "",
+      "kind": "read",
+      "mandatory": false,
+      "node_id": "s5",
+      "record": null,
+      "requires": [
+        {
+          "target": "t5",
+          "type": "present"
+        }
+      ],
+      "result_record": null,
+      "route": "/",
+      "target": "t5",
+      "transitions": [
+        {
+          "limit": null,
+          "origin": "observed",
+          "to": "done",
+          "when": []
+        }
+      ],
+      "type": "action",
+      "value": null,
+      "value_match": "equals",
+      "verify": []
+    },
+    {
+      "checks": [
+        {
+          "match": "equals",
+          "once": false,
+          "purpose": "result",
+          "record": null,
+          "target": "t5",
+          "type": "shows",
+          "value": {
+            "kind": "output",
+            "name": "membership_status",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "record",
+          "record": null,
+          "target": "t6",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "t7",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        }
+      ],
+      "node_id": "done",
+      "outcome": "",
+      "result": "success",
+      "type": "result"
+    },
+    {
+      "checks": [
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "state",
+          "record": null,
+          "target": "outcome_1",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "record",
+          "record": null,
+          "target": "outcome_1",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "member_id",
+            "value": ""
+          }
+        },
+        {
+          "match": "contains",
+          "once": false,
+          "purpose": "requirement",
+          "record": null,
+          "target": "outcome_2",
+          "type": "shows",
+          "value": {
+            "kind": "input",
+            "name": "operator_id",
+            "value": ""
+          }
+        }
+      ],
+      "node_id": "branch_1",
+      "outcome": "record_not_found",
+      "result": "outcome",
+      "type": "result"
+    }
+  ],
+  "outcomes": [
+    "record_not_found"
+  ],
+  "outputs": [
+    {
+      "choices": [
+        "active",
+        "inactive",
+        "deceased",
+        "merged",
+        "Active",
+        "Inactive",
+        "Deceased",
+        "Merged"
+      ],
+      "max_length": 20,
+      "min_length": 1,
+      "name": "membership_status",
+      "required": true,
+      "type": "choice"
+    }
+  ],
+  "provenance": {
+    "kind": "discovered",
+    "recorder": "computeruse_recorder_1",
+    "review": "draft",
+    "run": "run-5a24d000"
+  },
+  "restrictions": [],
+  "schema_version": 10,
+  "secrets": [],
+  "targets": [
+    {
+      "frame": [],
+      "route": "/",
+      "target_id": "t1",
+      "type": "focus"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": false,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t2",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Find member"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": false,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t3",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Sign on"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": false,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t4",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Member"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": true,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t5",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Status:"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": true,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t6",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Member number:"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": true,
+      "match": "equals",
+      "route": "/",
+      "target_id": "t7",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Operator:"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": true,
+      "match": "equals",
+      "route": "/",
+      "target_id": "outcome_1",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "No member with number"
+      },
+      "type": "text"
+    },
+    {
+      "dx": 0,
+      "dy": 0,
+      "frame": [],
+      "label": true,
+      "match": "equals",
+      "route": "/",
+      "target_id": "outcome_2",
+      "text": {
+        "kind": "constant",
+        "name": "",
+        "value": "Operator:"
+      },
+      "type": "text"
+    }
+  ],
+  "templates": [],
+  "variables": [],
+  "version": 1
+}
